@@ -64,7 +64,7 @@ Things you may want to cover:
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|------|string|-----|
+|photoUrl|string|-----|
 ### photosAssociation
 - belongs_to :item
 
