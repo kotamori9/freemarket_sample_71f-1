@@ -41,6 +41,7 @@ Things you may want to cover:
 ### usersAssociation
 - has_many :items
 - has_many :comments
+- has_many :address
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -53,6 +54,7 @@ Things you may want to cover:
 |address_number|string|null: false|
 |any_address_info|string||
 ## addressAssociation
+- belongs_to :user
 
 
 ## itemsテーブル
