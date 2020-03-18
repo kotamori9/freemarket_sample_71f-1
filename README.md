@@ -26,7 +26,6 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
 |nickname|string|null: false|
 |email|string|unique: true|
 |pass|string|null: false, length: { minimum: 7 }|
@@ -60,7 +59,6 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
 |user_id|integer|foreign_key: true|
 |brand_id|intger|foreign_key: true|
 |category_id|integer|null: false|
@@ -81,8 +79,7 @@ Things you may want to cover:
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|item_id|integer|null: false|
+|item_id|integer|null: false, foreign_key: true|
 |image|string|null: false|
 ### photosAssociation
 - belongs_to :item
@@ -100,7 +97,6 @@ Things you may want to cover:
 ## purchasedテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |item_id|integer|foreign_key: true|
 |user_id|integer|foreign_key: true|
 ### basketAssociation
@@ -110,7 +106,6 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|integer|null: false|
 |ancestry|string|null: false|
 ### brandsAssociation
@@ -120,7 +115,6 @@ Things you may want to cover:
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|string|null: false|
 |ancestry|string|null: false|
 ### categorysAssociation
