@@ -72,6 +72,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|-----|
+|user_id|string|----|
 ### commentsAssociation
 - belongs_to :user
 - belongs_to :items
