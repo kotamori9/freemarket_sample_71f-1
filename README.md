@@ -79,7 +79,7 @@ Things you may want to cover:
 ## basketテーブル
 |Column|Type|Options|
 |------|----|-------|
-|------|string|-----|
+|item_id|string|-----|
 ### basketAssociation
 - belongs_to :user
 - has_many :items
