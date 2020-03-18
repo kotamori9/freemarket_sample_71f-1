@@ -101,7 +101,7 @@ Things you may want to cover:
 |user_id|integer|foreign_key: true|
 ### basketAssociation
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
 
 ## brandsテーブル
 |Column|Type|Options|
