@@ -68,6 +68,7 @@ Things you may want to cover:
 - belongs_to :basket
 - has_many :comments
 - has_many :photos
+- has_many :basket
 
 ## photosテーブル
 |Column|Type|Options|
@@ -94,6 +95,7 @@ Things you may want to cover:
 |user_id|string|foreign_key: true|
 ### basketAssociation
 - belongs_to :user
+- belongs_to :item
 - has_many :items
 
 ## brandsテーブル
