@@ -100,14 +100,14 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|string||
-|name|string||
+|id|string|null: false|
+|name|string|null: false|
 ### brandsAssociation
 - has_many :items
 
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|string||
+|id|string|null: false|
 ### categorysAssociation
 - has_many :items
