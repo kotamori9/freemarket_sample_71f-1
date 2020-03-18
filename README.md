@@ -40,6 +40,7 @@ Things you may want to cover:
 |prefecture|string|----|
 |city|string|-----|
 |addressNumber|string|----|
+|creditCard|string|----|
 ### usersAssociation
 - has_many :items
 - has_many :comments
