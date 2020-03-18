@@ -72,7 +72,7 @@ Things you may want to cover:
 |days_to_ship|string|null: false|
 ### itemsAssociation
 - belongs_to :user
-- belongs_to :barand
+- belongs_to :brand
 - belongs_to :category
 - belongs_to :basket
 - has_many :comments
