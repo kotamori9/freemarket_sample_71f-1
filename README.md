@@ -97,6 +97,6 @@ Things you may want to cover:
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|------|string|-----|
+|item_id|string|-----|
 ### categorysAssociation
 - has_many :items
