@@ -114,6 +114,7 @@ Things you may want to cover:
 |name|integer|null: false|
 ### brandsAssociation
 - has_many :items
+- has_ancestry
 
 ## categorysテーブル
 |Column|Type|Options|
@@ -122,3 +123,4 @@ Things you may want to cover:
 |name|string|null: false|
 ### categorysAssociation
 - has_many :items
+- has_ancestry
