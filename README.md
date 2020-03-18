@@ -35,13 +35,13 @@ Things you may want to cover:
 |firstName|string|null: false|
 |familyNameFurigana|string|null: false|
 |firstNameFurigana|string|null: false|
-|sendAddress|string|-----|
-|sendAddressFurigana|string|-----|
-|postalCode|string|-----|
-|prefecture|string|----|
-|city|string|-----|
-|addressNumber|string|----|
-|creditCard|string|----|
+|sendAddress|string|null: false|
+|sendAddressFurigana|string|null: false|
+|postalCode|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|addressNumber|string|null: false|
+|creditCard|string|null: false|
 ### usersAssociation
 - has_many :items
 - has_many :comments
