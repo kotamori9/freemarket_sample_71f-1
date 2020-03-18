@@ -90,7 +90,7 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|------|string|-----|
+|item_id|string|-----|
 ### brandsAssociation
 - has_many :items
 
