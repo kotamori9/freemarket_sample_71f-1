@@ -24,19 +24,38 @@ Things you may want to cover:
 * ...
 
 ## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, foreign_key: true|
+|------|string|-----|
 ### usersAssociation
 
 ## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|------|string|-----|
 ### itemsAssociation
 
 ## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|------|string|-----|
 ### commentsAssociation
 
 ## basketテーブル
+|Column|Type|Options|
+|------|----|-------|
+|------|string|-----|
 ### basketAssociation
 
 ## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|------|string|-----|
 ### brandsAssociation
 
 ## categorysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|------|string|-----|
 ### categorysAssociation
