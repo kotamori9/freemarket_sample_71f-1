@@ -71,7 +71,7 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|------|string|-----|
+|comment|text|-----|
 ### commentsAssociation
 - belongs_to :user
 - belongs_to :items
