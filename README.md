@@ -44,6 +44,13 @@ Things you may want to cover:
 - has_many :comments
 - has_many :photos
 
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|------|string|-----|
+### photosAssociation
+- belongs_to :item
+
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
