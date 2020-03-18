@@ -74,7 +74,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :category
-- belongs_to :purchased
+- has_many :purchased
 - has_many :comments
 - has_many :photos
 
@@ -105,13 +105,14 @@ Things you may want to cover:
 |user_id|integer|foreign_key: true|
 ### basketAssociation
 - belongs_to :user
-- has_many :items
+- belongs_to :items
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
 |name|integer|null: false|
+|ancestry|string|null: false|
 ### brandsAssociation
 - has_many :items
 - has_ancestry
@@ -121,6 +122,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false|
 |name|string|null: false|
+|ancestry|string|null: false|
 ### categorysAssociation
 - has_many :items
 - has_ancestry
