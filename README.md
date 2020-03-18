@@ -52,8 +52,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|user_id|integer|----|
-|brand_id|intger|----|
+|user_id|integer|foreign_key: true|
+|brand_id|intger|foreign_key: true|
 |category_id|integer|---|
 |itemName|string|-----|
 |itemDescription|string|-----|
@@ -81,7 +81,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|-----|
-|user_id|string|----|
+|user_id|string|foreign_key: true|
 ### commentsAssociation
 - belongs_to :user
 - belongs_to :items
@@ -89,8 +89,8 @@ Things you may want to cover:
 ## basketテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|string|-----|
-|user_id|string|----|
+|item_id|string|foreign_key: true|
+|user_id|string|foreign_key: true|
 ### basketAssociation
 - belongs_to :user
 - has_many :items
