@@ -47,7 +47,12 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|------|string|-----|
+|itemName|string|-----|
+|itemDescription|string|-----|
+|itemStatus|string|-----|
+|itemPrice|string|-----|
+|shippingCharges|string|-----|
+|daysToShip|string|-----|
 ### itemsAssociation
 - belongs_to :user
 - belongs_to :barand
