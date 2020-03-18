@@ -95,13 +95,13 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|string|-----|
+|id|string|-----|
 ### brandsAssociation
 - has_many :items
 
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|string|-----|
+|id|string|-----|
 ### categorysAssociation
 - has_many :items
