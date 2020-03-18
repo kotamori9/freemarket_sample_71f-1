@@ -50,6 +50,8 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
 |user_id|integer|----|
+|brand_id|intger|----|
+|category_id|integer|---|
 |itemName|string|-----|
 |itemDescription|string|-----|
 |itemStatus|string|-----|
