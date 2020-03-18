@@ -74,7 +74,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :category
-- belongs_to :basket
+- belongs_to :purchased
 - has_many :comments
 - has_many :photos
 
@@ -97,7 +97,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-## basketテーブル
+## purchasedテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
