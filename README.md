@@ -82,6 +82,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |item_id|string|-----|
+|user_id|string|----|
 ### basketAssociation
 - belongs_to :user
 - has_many :items
