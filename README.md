@@ -22,3 +22,21 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## usersテーブル
+### usersAssociation
+
+## itemsテーブル
+### itemsAssociation
+
+## commentsテーブル
+### commentsAssociation
+
+## basketテーブル
+### basketAssociation
+
+## brandsテーブル
+### brandsAssociation
+
+## categorysテーブル
+### categorysAssociation
