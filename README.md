@@ -41,6 +41,8 @@ Things you may want to cover:
 - belongs_to :barand
 - belongs_to :category
 - belongs_to :basket
+- has_many :comments
+- has_many :photos
 
 ## commentsテーブル
 |Column|Type|Options|
