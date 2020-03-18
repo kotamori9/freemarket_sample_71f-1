@@ -27,13 +27,13 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|nickname|string|-----|
+|nickname|string|null: false|
 |email|string|-----|
-|pass|string|-----|
-|familyName|string|-----|
-|firstName|string|-----|
-|familyNameFurigana|string|-----|
-|firstNameFurigana|string|-----|
+|pass|string|null: false|
+|familyName|string|null: false|
+|firstName|string|null: false|
+|familyNameFurigana|string|null: false|
+|firstNameFurigana|string|null: false|
 |sendAddress|string|-----|
 |sendAddressFurigana|string|-----|
 |postalCode|string|-----|
