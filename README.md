@@ -35,7 +35,6 @@ Things you may want to cover:
 |first_name|string|null: false|
 |last_name_furigana|string|null: false|
 |first_name_furigana|string|null: false|
-
 |credit_card|string|null: false|
 |tel|string||
 ### usersAssociation
