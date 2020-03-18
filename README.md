@@ -48,6 +48,7 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|id|integer|null: false, foreign_key: true|
 |itemName|string|-----|
 |itemDescription|string|-----|
 |itemStatus|string|-----|
