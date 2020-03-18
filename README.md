@@ -41,7 +41,9 @@ Things you may want to cover:
 |prefecture|string|null: false|
 |city|string|null: false|
 |addressNumber|string|null: false|
+|anyAddressInfo|string||
 |creditCard|string|null: false|
+|tel|string||
 ### usersAssociation
 - has_many :items
 - has_many :comments
