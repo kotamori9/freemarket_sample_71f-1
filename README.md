@@ -45,6 +45,7 @@ Things you may want to cover:
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false|
 |destination_name|string|null: false|
 |destination_name_furigana|string|null: false|
 |postal_code|string|null: false|
@@ -62,13 +63,13 @@ Things you may want to cover:
 |id|integer|null: false, foreign_key: true|
 |user_id|integer|foreign_key: true|
 |brand_id|intger|foreign_key: true|
-|category_id|integer||
-|item_name|string||
-|item_description|string||
-|item_status|string||
-|item_price|string||
-|shipping_charges|string||
-|days_to_ship|string||
+|category_id|integer|null: false|
+|name|string|null: false|
+|description|string|null: false|
+|status|string|null: false|
+|price|string|null: false|
+|shipping_charges|string|null: false|
+|days_to_ship|string|null: false|
 ### itemsAssociation
 - belongs_to :user
 - belongs_to :barand
@@ -81,16 +82,17 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|image|string||
+|item_id|integer|null: false|
+|image|string|null: false|
 ### photosAssociation
 - belongs_to :item
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|text||
-|item_id|string||
-|user_id|string|foreign_key: true|
+|comment|text|null: false|
+|item_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 ### commentsAssociation
 - belongs_to :user
 - belongs_to :item
@@ -98,9 +100,9 @@ Things you may want to cover:
 ## basketテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer||
-|item_id|string|foreign_key: true|
-|user_id|string|foreign_key: true|
+|id|integer|null: false|
+|item_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
 ### basketAssociation
 - belongs_to :user
 - has_many :items
@@ -108,14 +110,15 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|string|null: false|
-|name|string|null: false|
+|id|integer|null: false|
+|name|integer|null: false|
 ### brandsAssociation
 - has_many :items
 
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|string|null: false|
+|id|integer|null: false|
+|name|string|null: false|
 ### categorysAssociation
 - has_many :items
