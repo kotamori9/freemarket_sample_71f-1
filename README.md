@@ -29,7 +29,7 @@ Things you may want to cover:
 |id|integer|null: false, foreign_key: true|
 |nickname|string|null: false|
 |email|string|unique: true|
-|pass|string|null: false|
+|pass|string|null: false, length: { minimum: 7 }|
 |birthday|string|null: false|
 |familyName|string|null: false|
 |firstName|string|null: false|
