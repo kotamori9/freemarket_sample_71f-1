@@ -27,7 +27,19 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|------|string|-----|
+|nickname|string|-----|
+|email|string|-----|
+|pass|string|-----|
+|familyName|string|-----|
+|firstName|string|-----|
+|familyNameFurigana|string|-----|
+|firstNameFurigana|string|-----|
+|sendAddress|string|-----|
+|sendAddressFurigana|string|-----|
+|postalCode|string|-----|
+|prefecture|string|----|
+|city|string|-----|
+|addressNumber|string|----|
 ### usersAssociation
 - has_many :items
 - has_many :comments
