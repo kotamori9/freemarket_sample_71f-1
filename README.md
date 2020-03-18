@@ -66,6 +66,7 @@ Things you may want to cover:
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
+|id|integer|null: false, foreign_key: true|
 |image|string|-----|
 ### photosAssociation
 - belongs_to :item
