@@ -30,6 +30,7 @@ Things you may want to cover:
 |nickname|string|null: false|
 |email|string|-----|
 |pass|string|null: false|
+|birthday|string|null: false|
 |familyName|string|null: false|
 |firstName|string|null: false|
 |familyNameFurigana|string|null: false|
