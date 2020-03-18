@@ -31,18 +31,18 @@ Things you may want to cover:
 |email|string|unique: true|
 |pass|string|null: false, length: { minimum: 7 }|
 |birthday|string|null: false|
-|familyName|string|null: false|
-|firstName|string|null: false|
-|familyNameFurigana|string|null: false|
-|firstNameFurigana|string|null: false|
-|sendAddress|string|null: false|
-|sendAddressFurigana|string|null: false|
-|postalCode|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_furigana|string|null: false|
+|first_name_furigana|string|null: false|
+|send_address|string|null: false|
+|send_addressFurigana|string|null: false|
+|postal_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|addressNumber|string|null: false|
-|anyAddressInfo|string||
-|creditCard|string|null: false|
+|address_number|string|null: false|
+|any_address_info|string||
+|credit_card|string|null: false|
 |tel|string||
 ### usersAssociation
 - has_many :items
@@ -55,12 +55,12 @@ Things you may want to cover:
 |user_id|integer|foreign_key: true|
 |brand_id|intger|foreign_key: true|
 |category_id|integer||
-|itemName|string||
-|itemDescription|string||
-|itemStatus|string||
-|itemPrice|string||
-|shippingCharges|string||
-|daysToShip|string||
+|item_name|string||
+|item_description|string||
+|item_status|string||
+|item_price|string||
+|shipping_charges|string||
+|days_to_ship|string||
 ### itemsAssociation
 - belongs_to :user
 - belongs_to :barand
