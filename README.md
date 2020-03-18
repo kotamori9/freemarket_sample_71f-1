@@ -40,7 +40,7 @@ Things you may want to cover:
 ### usersAssociation
 - has_many :items
 - has_many :comments
-- has_many :address
+- has_many :addresses
 
 ## addressesテーブル
 |Column|Type|Options|
