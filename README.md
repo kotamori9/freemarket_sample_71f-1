@@ -28,7 +28,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
 |nickname|string|null: false|
-|email|string|-----|
+|email|string|unique: true|
 |pass|string|null: false|
 |birthday|string|null: false|
 |familyName|string|null: false|
