@@ -99,6 +99,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string|-----|
+|brandName|string||
 ### brandsAssociation
 - has_many :items
 
