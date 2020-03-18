@@ -54,13 +54,13 @@ Things you may want to cover:
 |id|integer|null: false, foreign_key: true|
 |user_id|integer|foreign_key: true|
 |brand_id|intger|foreign_key: true|
-|category_id|integer|---|
-|itemName|string|-----|
-|itemDescription|string|-----|
-|itemStatus|string|-----|
-|itemPrice|string|-----|
-|shippingCharges|string|-----|
-|daysToShip|string|-----|
+|category_id|integer||
+|itemName|string||
+|itemDescription|string||
+|itemStatus|string||
+|itemPrice|string||
+|shippingCharges|string||
+|daysToShip|string||
 ### itemsAssociation
 - belongs_to :user
 - belongs_to :barand
@@ -73,14 +73,14 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
-|image|string|-----|
+|image|string||
 ### photosAssociation
 - belongs_to :item
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|-----|
+|comment|text||
 |user_id|string|foreign_key: true|
 ### commentsAssociation
 - belongs_to :user
@@ -98,7 +98,7 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|string|-----|
+|id|string||
 |brandName|string||
 ### brandsAssociation
 - has_many :items
@@ -106,6 +106,6 @@ Things you may want to cover:
 ## categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|string|-----|
+|id|string||
 ### categorysAssociation
 - has_many :items
