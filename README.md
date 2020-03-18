@@ -89,6 +89,7 @@ Things you may want to cover:
 ## basketテーブル
 |Column|Type|Options|
 |------|----|-------|
+|id|integer||
 |item_id|string|foreign_key: true|
 |user_id|string|foreign_key: true|
 ### basketAssociation
