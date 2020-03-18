@@ -49,6 +49,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, foreign_key: true|
+|user_id|integer|----|
 |itemName|string|-----|
 |itemDescription|string|-----|
 |itemStatus|string|-----|
