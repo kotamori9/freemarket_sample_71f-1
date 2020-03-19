@@ -1,36 +1,51 @@
-    .header {
-      height: 50px;
-      width: 100wh;
-      .header__contents {
-        .header__contents__logo {
-
-        }
-        .header__contents__status {
-
-        }
-      }
-    }
-
-    .body {
-      .body__title {
-
-      }
-      .body__form {
-
-      }
-      .body__submit {
-
-      }
-    }
-
-    .footer {
-      .footer__contents {
-        .footer__contents__top {
-
-        }
-        .footer__contents__logo {
-
-        }
-      }
+.registrationHeader {
+  height: 70px;
+  width: 100%;
+  background-color: lightgreen;
+  .header__contents {
+    .header__contents__logo {
 
     }
+    .header__contents__status {
+
+    }
+  }
+}
+
+.registrationBody {
+  height: 110vh;
+  background-color: #f2f2f2;
+  .registrationBody__title {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: white;
+  }
+  .registrationBody__form {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    .registrationBody__form__field {
+
+    }
+    .registrationBody__form__actions {
+
+    }
+  }
+}
+
+.registrationFooter {
+  height: 70px;
+  width: 100%;
+  background-color: lightskyblue;
+  .registrationFooter__contents {
+    .registrationFooter__contents__top {
+
+    }
+    .registrationFooter__contents__logo {
+
+    }
+  }
+}
