@@ -38,33 +38,66 @@
 
 
 -# 仮です
+-# .main__introduction
+-#   %h2.subtitle
+-#     FURIMAが選ばれる3つの理由
+-#     <::after></::after>　　　　　　まだ仮
+-#   %ul.lists
+-#     %li.list
+-#       .list__pict
+-#         %span.number
+-#         = image_tag "pict-reason-01.png", size: "", alt: "携帯使用中"
+-#       %h3.list__text
+-#         %span 3分
+-#         ですぐ出品
+-#       %p.list__description
+-#         スマホで入力するだけで簡単に出品できる！
+-#     %li.list
+-#       .list__pict
+-#         %span.number
+-#         = image_tag "pict-reason-02.png", size: "", alt: "携帯使用中"
+-#       %h3.list__text
+-#         %span シンプル
+-#         で使いやすい
+-#       %p.list__description
+-#         めんどくさい入力は必要なく、検索も購入もスムーズ！
+-#     %li.list list--last
+-#       .list__pict
+-#         %span.number
+-#         = image_tag "pict-reason-03.png", size: "", alt: "携帯使用中"
+-#       %h3.list__text
+-#         手数料
+-#         %span 業界最安
+-#       %p.list__description
+-#         最大3%でお得に出品&購入！
+
 .main__introduction
   %h2.subtitle
     FURIMAが選ばれる3つの理由
-    <::after></::after>　　　　　　まだ仮
+    -# <::after></::after>　　　　　　まだ仮
   %ul.lists
     %li.list
       .list__pict
         %span.number
-        = image_tag "pict-reason-01.png", size: "", alt: "携帯使用中"
-      %h3.list__text
+        -# = image_tag "pict-reason-01.png", size: "", alt: "携帯使用中"
+      %h3
         %span 3分
         ですぐ出品
-      %p.list__description
+      %p
         スマホで入力するだけで簡単に出品できる！
     %li.list
       .list__pict
         %span.number
-        = image_tag "pict-reason-02.png", size: "", alt: "携帯使用中"
+        -# = image_tag "pict-reason-02.png", size: "", alt: "携帯使用中"
       %h3.list__text
         %span シンプル
         で使いやすい
       %p.list__description
         めんどくさい入力は必要なく、検索も購入もスムーズ！
-    %li.list list--last
+    %li.list.list--last
       .list__pict
         %span.number
-        = image_tag "pict-reason-03.png", size: "", alt: "携帯使用中"
+        -# = image_tag "pict-reason-03.png", size: "", alt: "携帯使用中"
       %h3.list__text
         手数料
         %span 業界最安
