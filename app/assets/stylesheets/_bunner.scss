@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+.bunner{
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  color: #fff;
+  padding: 100px 40px;
+  background-image: url(bg-appBanner-pict.jpg);
+  background-position: center;
+  background-size: cover;
+  
+
+  &__contents{
+    text-align: center;
+
+    &__title{
+      text-shadow: 0 0 5px rgba(0,0,0,4);
+      font-size:24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__text{
+      text-shadow: 0 0 5px rgba(0,0,0,4);
+      font-size:35px;
+    }
+    &__content{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+      .tag1{
+        width: 180px;
+      }
+      .tag2{
+        width: 180px;
+      }
+    }
+}}
