@@ -1,0 +1,22 @@
+.pcHeader
+  .pcHeader__headerInner
+    .pcHeader__headerInner__mainHeader
+      = image_tag "logo.png",size: :'140x40', class: "pcHeader__headerInner__mainHeader__icon"
+      = form_with(url: '', local: true,method: :get,class:"pcHeader__headerInner__mainHeader__searchBox") do |form|
+        = form.text_field :keyword,placeholder: "投稿を検索する",class: "pcHeader__headerInner__mainHeader__searchBox__input"
+        = form.submit '', class: "pcHeader__headerInner__mainHeader__searchBox__btn"
+    .pcHeader__headerInner__nav
+      .pcHeader__headerInner__nav__listsLeft
+        .pcHeader__headerInner__nav__listsLeft__item--first
+          =link_to "/", method: :get do
+            ="カテゴリ"
+        .pcHeader__headerInner__nav__listsLeft__item
+          =link_to "/", method: :get do
+            ="ブランド"
+      .pcHeader__headerInner__nav__listsRight
+        .pcHeader__headerInner__nav__listsRight__item--login
+          =link_to "/", method: :get do
+            ="ログイン"
+        .pcHeader__headerInner__nav__listsRight__item--new
+          =link_to "/", method: :get do
+            ="新規会員登録"
