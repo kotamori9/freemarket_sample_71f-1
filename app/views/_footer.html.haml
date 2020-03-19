@@ -10,21 +10,22 @@
         %li< ポイントに関する特約
 
     .footer__contents__content2
-      .content-head2 
+      .content-head1 
         FURIMAを見る
       %ul
         %li< カテゴリー一覧
         %li< ブランド一覧
 
     .footer__contents__content3 
-      .content-head3
+      .content-head1
         ヘルプ＆ガイド
       %ul
         %li< FURIMAガイド
         %li< FURIMAロゴ利用ガイドライン
         %li< お知らせ
   .footer__logo
-    = image_tag "logo.png", size: "", alt: "会社のロゴ"
+    -#  image_tag src="logo.png", size: "", alt: "会社のロゴ"
+    = image_tag "logo-white.png", size: "160x46"
   .footer__name
     © FURIMA
     
