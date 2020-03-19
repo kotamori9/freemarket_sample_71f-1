@@ -60,7 +60,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
-|brand_id|intger|foreign_key: true|
+|brand_id|integer|foreign_key: true|
 |category_id|integer|null: false|
 |name|string|null: false|
 |description|string|null: false|
