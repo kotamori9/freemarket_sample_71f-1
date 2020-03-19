@@ -61,7 +61,7 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|category_id|integer|null: false|
+|category_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 |description|string|null: false|
 |status|string|null: false|
