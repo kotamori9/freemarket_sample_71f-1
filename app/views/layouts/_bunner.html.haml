@@ -1,0 +1,15 @@
+.bunner
+  .bunner__contents
+    .bunner__contents__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .bunner__contents__text
+      今すぐ無料ダウンロード
+    .bunner__contents__content
+      .tag1
+        -# = link_to 'apple.png', 'http://google.co.jp'
+        = link_to "/",method: :get do
+          = image_tag "apple.png", size: "160x46"
+        
+      .tag2
+        = link_to "/",method: :get do
+          = image_tag "google.png", size: "160x46"
