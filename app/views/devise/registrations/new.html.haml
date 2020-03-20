@@ -49,12 +49,11 @@
         = f.label :"パスワード"
         %em 必須
         %br/
-        = f.password_field :encrypted_password, autocomplete: "new-password",placeholder: "7文字以上の半角英数字",style: "width:300px; height:50px;"
+        = f.password_field :encrypted_password, autocomplete: "off",placeholder: "7文字以上の半角英数字",style: "width:300px; height:50px;"
       .registrationBody__form__field
         = f.label :"パスワード確認"
         %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "再入力",style: "width:300px; height:50px;"
-
+        = f.password_field :password_confirmation, autocomplete: "off",placeholder: "再入力",style: "width:300px; height:50px;"
       .registrationBody__form__actions
         = f.submit "登録", class: 'button'
     = render "devise/shared/links"
