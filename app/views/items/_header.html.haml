@@ -8,15 +8,15 @@
     .pcHeader__headerInner__nav
       .pcHeader__headerInner__nav__listsLeft
         .pcHeader__headerInner__nav__listsLeft__item--first
-          =link_to "/", method: :get do
+          =link_to "/" do
             ="カテゴリ"
         .pcHeader__headerInner__nav__listsLeft__item
-          =link_to "/", method: :get do
+          =link_to "/" do
             ="ブランド"
       .pcHeader__headerInner__nav__listsRight
         .pcHeader__headerInner__nav__listsRight__item--login
-          =link_to new_user_session_path, method: :get do
+          =link_to new_user_session_path do
             ="ログイン"
         .pcHeader__headerInner__nav__listsRight__item--new
-          =link_to new_user_registration_path, method: :get do
+          =link_to new_user_registration_path do
             ="新規会員登録"
