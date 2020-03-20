@@ -1,7 +1,8 @@
 .registrationHeader
-  .header__contents
+  .registrationHeader__contents
     .header__contents__logo
-    .header__contents__status
+      = link_to image_tag("logo.png", size: :'140x40', class: "registrationHeader__contents__logo__icon"), "/"
+    .registrationHeader__contents__status
 .registrationBody
   .registrationBody__title
     %h2 新規会員登録
@@ -12,25 +13,36 @@
         = f.label :"ニックネーム"
         %em 必須
         %br/
-        = f.text_field :nickname, autofocus: true, autocomplete: "email",placeholder: "例）フリマ太郎"
+        = f.text_field :nickname, autofocus: true, autocomplete: "email",placeholder: "例）フリマ太郎",style: "width:300px; height:50px;"
       .registrationBody__form__field
         = f.label :"メールアドレス"
         %em 必須
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "PC・携帯どちらでも可"
+        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "PC・携帯どちらでも可",style: "width:300px; height:50px;"
       .registrationBody__form__field
         = f.label :"パスワード"
         %em 必須
         %br/
-        = f.password_field :password, autocomplete: "new-password",placeholder: "7文字以上の半角英数字"
+        = f.password_field :password, autocomplete: "new-password",placeholder: "7文字以上の半角英数字",style: "width:300px; height:50px;"
       .registrationBody__form__field
         = f.label :"パスワード確認"
         %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "再入力"
+        = f.password_field :password_confirmation, autocomplete: "new-password",placeholder: "再入力",style: "width:300px; height:50px;"
       .registrationBody__form__actions
-        = f.submit "Sign up"
+        = f.submit "登録", class: 'button'
     = render "devise/shared/links"
+    .registrationBody__form__text
+      %h3「登録」のボタンを押すことにより、
+      %a{:href => "/"}利用規約
+      に同意したものとみなします
+      %br/
 .registrationFooter
-  .footer__contents
-    .footer__contents__top
-    .footer__contents__logo
+  .registrationFooter__contents
+    .registrationFooter__contents__top
+      %ur
+        %li プライバシーポリシー
+        %li フリマ利用規約
+        %li 特定商取引に関する表記
+    .registrationFooter__contents__logo
+      %ur
+        %li ©frima, Inc.
