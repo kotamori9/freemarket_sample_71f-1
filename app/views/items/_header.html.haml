@@ -14,9 +14,17 @@
           =link_to "/" do
             ="ブランド"
       .pcHeader__headerInner__nav__listsRight
-        .pcHeader__headerInner__nav__listsRight__item--login
-          =link_to new_user_session_path do
-            ="ログイン"
-        .pcHeader__headerInner__nav__listsRight__item--new
-          =link_to new_user_registration_path do
-            ="新規会員登録"
+        - if user_signed_in?
+          .pcHeader__headerInner__nav__listsRight__item--login
+            =link_to "/" do
+              ="マイページ"
+          .pcHeader__headerInner__nav__listsRight__item--new
+            =link_to destroy_user_session_path, method: :delete do
+              ="ログアウト"
+        - else
+          .pcHeader__headerInner__nav__listsRight__item--login
+            =link_to new_user_session_path do
+              ="ログイン"
+          .pcHeader__headerInner__nav__listsRight__item--new
+            =link_to new_user_registration_path do
+              ="新規会員登録"
