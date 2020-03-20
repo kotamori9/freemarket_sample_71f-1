@@ -28,14 +28,14 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|unique: true|
-|pass|string|null: false, length: { minimum: 7 }|
+|encrypted_password|string|null: false, length: { minimum: 7 }|
 |birthday|string|null: false|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |last_name_furigana|string|null: false|
 |first_name_furigana|string|null: false|
 |credit_card|string|null: false|
-|tel|string||
+|tell|string||
 ### usersAssociation
 - has_many :items
 - has_many :comments
