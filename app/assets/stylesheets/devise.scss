@@ -1,51 +1,112 @@
 .registrationHeader {
-  height: 70px;
+  height: 125px;
   width: 100%;
-  background-color: lightgreen;
-  .header__contents {
-    .header__contents__logo {
-
+  background-color: #f2f2f2;
+  &__contents {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 155px;
+    padding-top: 40px;
+    &__logo {
+      &__icon {
+        cursor: pointer; 
+        max-width: 100%;
+        height: auto;
+      }
     }
-    .header__contents__status {
+    &__status {
 
     }
   }
 }
 
 .registrationBody {
-  height: 110vh;
+  height: 100%;
   background-color: #f2f2f2;
-  .registrationBody__title {
+  &__title {
+    height: 60px;
     width: 500px;
+    border-bottom: solid 1px lightgray;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
     background-color: white;
   }
-  .registrationBody__form {
+  &__form {
+    height: 600px;
+    padding-top: 20px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    .registrationBody__form__field {
-
+    &__field {
+      margin-bottom: 20px;
+      margin-left: 100px;
+      em {
+        font-size: 13px;
+        background-color: red;
+        color:white;
+        border-radius: 2px;
+      }
     }
-    .registrationBody__form__actions {
-
+    &__actions {
+      margin-left: 100px;
+      .button {
+        display       : inline-block;
+        border-radius : 5%; 
+        font-size     : 18pt;  
+        text-align    : center;
+        cursor        : pointer;  
+        padding       : 12px 12px; 
+        color         : #ffffff; 
+        background-color: #3CCACE;
+        line-height   : 1em;   
+        transition    : .3s;   
+        box-shadow    : 6px 6px 3px #666666;
+        height: 50px;
+        width: 300px;
+      }
+      .button:hover {
+        box-shadow    : none;  
+        color         : #000066;  
+        background    : #ffffff;  
+      }
+    }
+    &__text {
+      margin-top: 30px;
+      margin-left: 100px;
     }
   }
 }
 
 .registrationFooter {
-  height: 70px;
+  height: 125px;
   width: 100%;
-  background-color: lightskyblue;
-  .registrationFooter__contents {
-    .registrationFooter__contents__top {
-
+  background-color: #f2f2f2;
+  &__contents {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-left: 160px;
+    padding-right: 160px;
+    text-align: center;
+    &__top {
+      li {
+        font-size: 10px;
+        list-style: none;
+      }
     }
-    .registrationFooter__contents__logo {
-
+    &__logo {
+      margin-top: 20px;
+      li {
+        font-size: 10px;
+        list-style: none;
+      }
     }
   }
 }
