@@ -1,9 +1,176 @@
 .sale{
   background-color: red;
-  height: 100vh;
+  height: 110%;
   width: 100%;
+
+  &__files{
+    background-color: blue;
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+
+    &__name{
+      background-color: yellow;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      margin-top: 10px;
+
+      &__comment1{
+        background-color: white;
+        width: 40%;
+        display: flex;
+        
+        &__box1{
+          line-height: 50px;
+        }
+
+        &__box2{
+          color: red;
+          line-height: 50px;
+        }
+      }
+
+      &__form{
+        background-color: pink;
+        height: 50px;
+        width: 100%;
+      }
+    }
+
+    &__description{
+      background-color: palegreen;
+      height: 160px;
+      width: 100%;
+      margin-top: 10px;
+
+      &__comment2{
+        background-color: green;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box3{
+          line-height: 160px;
+        }
+
+        &__box4{
+          color: red;
+          line-height: 160px;
+        }
+      }
+    }
+
+    &__categori{
+      background-color: purple;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+
+      &__comment3{
+        background-color: peru;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box5{
+          line-height: 50px;
+        }
+
+        &__box6{
+          color: red;
+          line-height: 50px;
+        }
+      }
+    }
+    
+    &__brand{
+      background-color: white;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+
+      &__comment4{
+        background-color:pink;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box7{
+          line-height: 50px;
+        }
+      }
+    }
+
+    &__postage{
+      background-color: blue;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+
+      &__comment5{
+        background-color:pink;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box8{
+          line-height: 50px;
+        }
+
+        &__box9{
+          color: red;
+          line-height: 50px;
+        }
+      }
+    }
+
+    &__shipping{
+      background-color: pink;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+
+      &__comment6{
+        background-color:green;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box10{
+          line-height: 50px;
+        }
+
+        &__box11{
+          color: red;
+          line-height: 50px;
+        }
+      }
+    }
+
+    &__price{
+      background-color: royalblue;
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+
+      &__comment7{
+        background-color:white;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box12{
+          line-height: 50px;
+        }
+
+        &__box13{
+          color: red;
+          line-height: 50px;
+        }
+      }
+    }
+  }
 }
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
 
