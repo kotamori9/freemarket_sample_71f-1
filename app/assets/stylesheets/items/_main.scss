@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+@mixin flex {
+  display: flex;
+}
+
 
 .main {
 
@@ -11,7 +15,7 @@
     background-image: image-url("bg-mainVisual-pict_pc.jpg");
     padding: 0 60px;
     background-size: cover;
-    display: flex;
+    @include flex;
     align-items: center;
     background-repeat: no-repeat;
     background-position: top center;
@@ -36,13 +40,6 @@
       &__btn {
         display: flex;
         margin: 24px 0 0 0;
-        // .btn-color {
-        //   width: 100%;
-        //   vertical-align:bottom;
-        // }
-        // .btn-color {
-
-        // }
         .abtn {
           margin-right: 10px;
         }
@@ -63,7 +60,7 @@
 
     ul.lists {
       text-align: center;
-      display: flex;
+      @include flex;
       max-width: 1020px;
       width: 100%;
       margin: 0 auto;
@@ -100,7 +97,7 @@
     background-position: bottom right;
     height: 400px;
     background-size: cover;
-    display: flex;
+    @include flex;
     align-items: center;
     &__contents {
       color: #fff;
@@ -120,7 +117,7 @@
         line-height: 1.5;
       }
       .btn {
-        display: flex;
+        @include flex;
         a {
           margin-right: 10px;
 
@@ -144,10 +141,10 @@
       max-width: calc(1040px+20px);
       width: 100%;
       margin: 0 auto;
-      display: flex;
+      @include flex;
       flex-wrap: wrap;
       .section.item {
-        display: flex;
+        @include flex;
         flex-direction: column;
         width: calc(1/3* 100%);
         text-align: center;
@@ -183,12 +180,11 @@
         width: 780px;
         padding: 26px auto;
         margin:0 auto;
-        display: flex;
+        @include flex;
         justify-content: space-around;
         .productList {
           width: 220px;
           display: inline-block;
-          float: left;
           a {
             display: inline-block;
             background-color: #fff;
@@ -215,7 +211,7 @@
               .details {
                 font-size: 16px;
                 ul {
-                  display: flex;
+                  @include flex;
                   align-items: center;
                   justify-content: space-between;
                   li {
@@ -263,12 +259,11 @@
       .productLists {
         width: 780px;
         margin: 26px auto;
-        display: flex;
+        @include flex;
         justify-content: space-around;
         .productList {
           width: 220px;
           display: inline-block;
-          float: left;
           a {
             display: inline-block;
             background-color: #fff;
@@ -295,7 +290,7 @@
               .details {
                 font-size: 16px;
                 ul {
-                  display: flex;
+                  @include flex;
                   align-items: center;
                   justify-content: space-between;
                   li {

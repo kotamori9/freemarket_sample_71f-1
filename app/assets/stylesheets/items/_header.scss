@@ -1,31 +1,25 @@
 .pcHeader{
   height:15vh;
   width: 100%;
-  // position: fixed;
-  // background-color: red;
 
   &__headerInner{
     height:15vh;
     width: 90%;
-    // background-color: blue;
     margin: auto;
 
     &__mainHeader{
       height:50%;
       width: 100%;
-      // background-color: green;
       display: flex;
       justify-content: flex-end;
       position: relative;
 
       &__icon{
-        // background-color: yellow;
         margin-top: 10px;
         padding-right:20px;
       }
 
       &__searchBox{
-        // background-color: blue;
         width: 70%;
         display: flex;
 
@@ -33,7 +27,6 @@
           height: 30px;
           margin-top: 15px;
           width: 600px;
-          // background-color: red;
           align-items: center;
         }
 
@@ -42,7 +35,7 @@
           height: 33px;
           margin-top: 15px;
           background-color: #3CCACE;
-          background-image: url("icon-search1.png");
+          background-image: image-url("icon-search1.png");
           background-size:60%;
           background-position: center;
           background-repeat:no-repeat;
@@ -54,7 +47,6 @@
     &__nav{
       height:50%;
       width: 100%;
-      // background-color: pink;
       position: relative;
       justify-content: space-between;
       display: flex;
@@ -65,12 +57,10 @@
         width: 30%;
 
         &__item--first{
-          // background-color: yellow;
           font-size: 15px;
           width: 50%;
         }
         &__item{
-          // background-color: red;
           font-size: 15px;
           width: 50%;
         }
@@ -88,13 +78,11 @@
         line-height: 50px;
 
         &__item--login{
-          // background-color: blue;
           font-size: 15px;
           width: 50%;
         }
 
         &__item--new{
-          // background-color: red;
           font-size: 15px;
           width: 50%;
         }
