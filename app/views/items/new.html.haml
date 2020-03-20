@@ -4,9 +4,15 @@
 .sale
   .sale__files
     =form_with() do |f|
-      = f.file_field :image, class: 'image__file'
+      = f.label :image, class: "image" do
+        = icon('fas', 'image',class:'sale__files__img1')
+        = f.file_field :image, class: 'image__file1'
+      = f.label :image, class: "image2" do
         = icon('fas', 'image')
-      = f.submit '作成', class: 'sale__files__btn'
+        = f.file_field :image, class: 'image__file2'
+      = f.label :image, class: "image3" do
+        = icon('fas', 'image')
+        = f.file_field :image, class: 'image__file3'
   .sale__files__name
     .sale__files__name__comment1
       .sale__files__name__comment1__box1
@@ -14,37 +20,61 @@
       .sale__files__name__comment1__box2
         ※必須
     .sale__files__name__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "商品名を入力",class:"sale__files__name__form__input"
   .sale__files__description
     .sale__files__description__comment2
       .sale__files__description__comment2__box3
         商品説明
       .sale__files__description__comment2__box4
         ※必須
+    .sale__files__description__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "商品説明を入力",class:"sale__files__description__form__input"
   .sale__files__categori
     .sale__files__categori__comment3
       .sale__files__categori__comment3__box5
         カテゴリ
       .sale__files__categori__comment3__box6
         ※必須
+    .sale__files__categori__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "商品説明を入力",class:"sale__files__categori__form__input"
   .sale__files__brand
     .sale__files__brand__comment4
       .sale__files__brand__comment4__box7
         ブランド
+      .sale__files__brand__comment4__space
+    .sale__files__brand__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "ブランド名を入力",class:"sale__files__brand__form__input"
   .sale__files__postage
     .sale__files__postage__comment5
       .sale__files__postage__comment5__box8
         配送料の負担
       .sale__files__postage__comment5__box9
         ※必須
+    .sale__files__postage__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "商品説明を入力",class:"sale__files__postage__form__input"
   .sale__files__shipping
     .sale__files__shipping__comment6
       .sale__files__shipping__comment6__box10
         発送日の目安
       .sale__files__shipping__comment6__box11
         ※必須
+    .sale__files__shipping__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "商品説明を入力",class:"sale__files__shipping__form__input"
   .sale__files__price
     .sale__files__price__comment7
       .sale__files__price__comment7__box12
         商品価格
       .sale__files__price__comment7__box13
         ※必須
+    .sale__files__price__form
+      =form_with() do |f|
+        = f.text_field :text, placeholder: "価格を入力",class:"sale__files__price__form__input"
+  .sale__submit
+    =form_with() do |f|
+      =  f.submit "SEND",class:"sale__submit__btn"
