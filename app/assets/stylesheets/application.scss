@@ -1,8 +1,10 @@
 @import "reset";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 @import "items/header";
 @import "items/main";
 @import "items/bunner";
 @import "items/footer";
+@import "items/photo-btn.scss";
 @import "devise";
-// @import "bunner";
 @import "sales/sale";
