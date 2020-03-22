@@ -2,7 +2,7 @@
   .single-container__header
     %h1
       %a
-        = image_tag "logo-white.png", size: "180x53"
+        = image_tag "logo.png", size: "180x53"
   .single-container__main
     .single-container__main__section
       %h2
@@ -41,8 +41,7 @@
                 .clearfix
                   %h3
                     支払い方法
-                  %a
-                    変更する
+                  = link_to "変更する" 
                 %p
                   クレジットカード
                   %br
@@ -58,8 +57,7 @@
                 .clearfix
                   %h3
                     配送先
-                  %a
-                    変更する
+                  = link_to "変更する" 
                 .adderss
                   %p
                     〒150-0043
@@ -69,10 +67,7 @@
                     真子就有
 
             .single-container__main__section__bottom__inner__form__btn
-              .btn
-                購入する
-
-
+              = link_to "購入する"
   .single-container__footer
     .nav
       %ul
