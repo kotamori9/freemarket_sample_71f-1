@@ -47,9 +47,13 @@
             }
           }
           .detail{
-            line-height: 1.5;
-            font-size: 18px;
+         
             margin-bottom: 30px;
+            ul{
+              line-height: 1.5; 
+              text-decoration: none;
+              font-size: 18px;
+            }
           }
           .table{
             width: 100%;
@@ -65,6 +69,7 @@
                 border: 0.5px solid #dedede;
                 font-size: 14px;
                 text-align: center;
+                
 
               .left1{
                 height: 47px;
@@ -133,18 +138,27 @@
 
             .left{
               margin-right: auto;
-              padding: 6px 10px;
               border-radius: 40px;
               color: #3ccace;
               border: 1px solid #ffb340;
+              text-decoration: none;
+              ul{
+                padding: 6px 10px;
+              }
+              a{
+               text-decoration: none;
+              }
             }
             .right{
-              margin:6px 10px;
               display: inline-block;
               border-radius: 4px;
               color: #333;
               border: 1px solid #333;
               text-decoration: none;
+              font-size: 14px;
+              ul{
+                margin:6px 10px;
+              }
             }
         }
       }
@@ -184,6 +198,10 @@
               font-size: 18px;
               border-radius: 100px;
               margin: 0 auto;
+              a{
+                text-decoration: none;
+              }
+
               // text-align: center;
               // align-items: flex-start;
             }
