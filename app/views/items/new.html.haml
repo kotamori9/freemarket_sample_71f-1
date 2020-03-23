@@ -62,6 +62,14 @@
               ※必須
           .sale__files__shipping__form
             = f.text_field :text, placeholder: "発送日の目安を入力",class:"sale__files__shipping__form__input"
+        .sale__files__area
+          .sale__files__area__comment8
+            .sale__files__area__comment8__box14
+              発送元
+            .sale__files__area__comment8__box15
+              ※必須
+          .sale__files__area__form
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name,class:"sale__files__area__form__input"
         .sale__files__price
           .sale__files__price__comment7
             .sale__files__price__comment7__box12
