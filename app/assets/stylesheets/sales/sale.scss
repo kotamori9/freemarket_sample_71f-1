@@ -251,6 +251,45 @@
       }
     }
 
+    &__area{
+      height: 50px;
+      width: 100%;
+      display: flex;
+      margin-top: 10px;
+
+      &__comment8{
+        // background-color:red;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box14{
+          line-height: 50px;
+          margin:auto;
+        }
+
+        &__box15{
+          color: red;
+          line-height: 50px;
+        }
+      }
+
+      &__form{
+        // background-color: pink;
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+        padding-left: 30px;
+
+        &__input{
+          height: 50px;
+          width: 80%;
+          margin-left: 30px;
+        }
+      }
+
+    }
+
     &__price{
       // background-color: royalblue;
       height: 50px;
