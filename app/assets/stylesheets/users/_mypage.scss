@@ -1,0 +1,39 @@
+.myPage {
+  display: flex;
+  .myPageSide {
+    background-color: lightgray;
+    width: 40%;
+    height: 300px;
+    &__box {
+      margin-top: 10px;
+      margin-left: 20px;
+      height: 100%;
+      width: 200px;
+      &__address {
+        background-color: tomato;
+        height: 40px;
+        margin-top: 10px;
+        border: black bold 1px;
+      }
+      &__credit {
+        background-color: turquoise;
+        margin-top: 10px;
+        height: 40px;
+        border: black bold 1px;
+      }
+      &__top {
+        background-color: violet;
+        margin-top: 10px;
+        height: 40px;
+        border: black bold 1px;
+      }
+    }
+
+  }
+  .myPageMain {
+    background-color: red;
+    width: 60%;
+    height: 300px;
+  }
+
+}
