@@ -14,5 +14,5 @@ class User < ApplicationRecord
   validates :credit_card, presence: true
   # has_many :items
   # has_many :comments
-  # has_many :address
+  has_many :address
 end
