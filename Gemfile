@@ -78,3 +78,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'jp_prefecture'
 gem 'jquery-rails'
+
