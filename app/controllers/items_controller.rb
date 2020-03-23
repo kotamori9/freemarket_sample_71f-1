@@ -10,4 +10,10 @@ class ItemsController < ApplicationController
   
   def show
   end
+
+  private
+  def item_params
+    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id)
+  end
+
 end
