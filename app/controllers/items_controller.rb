@@ -8,11 +8,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @task = Item.create(item_params)
-    if @task.save
+    @item = Item.create(item_params)
+    if @item.save
       redirect_to root_path(@item), flash[:notice] ='商品が出品されました'
     else
-      redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
+      # redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
+      redirect_to root_path
     end
   end
   
