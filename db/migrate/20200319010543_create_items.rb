@@ -10,6 +10,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :price, null: false
       t.string :shipping_charges, null: false
       t.string :days_to_ship, null: false
+      t.string :buyer_id
+      t.string :saler_id
       t.timestamps
     end
   end
