@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
     if @item.save
       redirect_to root_path(@item), flash[:notice] ='商品が出品されました'
     else
@@ -22,7 +22,8 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id, image_attributes: [:id, :image]))
+    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id, image_attributes: [:id, :image])
+
   end
 
 end
