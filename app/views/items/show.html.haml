@@ -47,9 +47,17 @@
                 １週間           
           .tag
             .left
-              お気に入り0
-            .right
-              不適切な商品の通報
+              %ul
+                %i
+                  = fa_icon 'star'
+                %a
+                  お気に入り0
+            .right  
+              %ul
+                %i
+                  = fa_icon 'flag'
+                %a
+                不適切な商品の通報
            
         .middle__contents
           .content
@@ -60,8 +68,12 @@
             .text2
               コメントの履歴
             .button
-              こん目とす
-              -# = form.submit "コメントする"
+              %ul
+                %i
+                  = fa_icon 'comment'
+                %a
+                  コメントする
+
 
       .option__area
         .left
