@@ -175,6 +175,44 @@
       }
     }
 
+    &__status{
+      // background-color: white;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      margin-top: 10px;
+
+      &__comment9{
+        // background-color:pink;
+        height: 100%;
+        width: 30%;
+        display: flex;
+
+        &__box16{
+          line-height: 50px;
+          margin:auto;
+        }
+
+        &__box17{
+          line-height: 50px;
+          color: red;
+        }
+      }
+      
+      &__form{
+        // background-color: pink;
+        height: 50px;
+        width: 100%;
+        line-height: 50px;
+
+        &__input{
+          height: 40px;
+          width: 80%;
+          margin-left: 30px;
+        }
+      }
+    }
+
     &__postage{
       // background-color: blue;
       height: 50px;
