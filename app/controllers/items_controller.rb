@@ -7,8 +7,21 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  
+  def create
+    @task = Item.create(item_params)
+    if @task.save
+      redirect_to root_path(@item), flash[:notice] ='商品が出品されました'
+    else
+      redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
+    end
+  end
 
   def show
   end
+
+  private
+  def item_params
+    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id)
+  end
+
 end
