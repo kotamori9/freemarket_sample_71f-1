@@ -4,7 +4,7 @@
 
   .sale
     .sale__files
-      =form_with() do |f|
+      =form_with(modle: @item, local: true) do |f|
         = f.label :image, class: "image" do
           =fa_icon 'image',class:'sale__files__img1'
           = f.file_field :image, class: 'image__file1'
