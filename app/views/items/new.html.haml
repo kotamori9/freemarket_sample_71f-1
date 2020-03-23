@@ -21,7 +21,7 @@
             .sale__files__name__comment1__box2
               ※必須
           .sale__files__name__form
-            = f.text_field :text, placeholder: "商品名を入力",class:"sale__files__name__form__input"
+            = f.text_field :name, placeholder: "商品名を入力",class:"sale__files__name__form__input"
         .sale__files__description
           .sale__files__description__comment2
             .sale__files__description__comment2__box3
@@ -29,7 +29,7 @@
             .sale__files__description__comment2__box4
               ※必須
           .sale__files__description__form
-            = f.text_field :text, placeholder: "商品説明を入力",class:"sale__files__description__form__input"
+            = f.text_field :description, placeholder: "商品説明を入力",class:"sale__files__description__form__input"
         .sale__files__categori
           .sale__files__categori__comment3
             .sale__files__categori__comment3__box5
@@ -37,7 +37,7 @@
             .sale__files__categori__comment3__box6
               ※必須
           .sale__files__categori__form
-            = f.text_field :text, placeholder: "カテゴリを入力",class:"sale__files__categori__form__input"
+            = f.text_field :category, placeholder: "カテゴリを入力",class:"sale__files__categori__form__input"
         .sale__files__brand
           .sale__files__brand__comment4
             .sale__files__brand__comment4__box7
@@ -45,7 +45,7 @@
             .sale__files__brand__comment4__space
             ="　　　"
           .sale__files__brand__form
-            = f.text_field :text, placeholder: "ブランド名を入力",class:"sale__files__brand__form__input"
+            = f.text_field :brand, placeholder: "ブランド名を入力",class:"sale__files__brand__form__input"
         .sale__files__status
           .sale__files__status__comment9
             .sale__files__status__comment9__box16
@@ -53,7 +53,7 @@
             .sale__files__status__comment9__box17
               ※必須
           .sale__files__status__form
-            = f.text_field :text, placeholder: "状態を入力",class:"sale__files__status__form__input"
+            = f.text_field :status, placeholder: "状態を入力",class:"sale__files__status__form__input"
         .sale__files__postage
           .sale__files__postage__comment5
             .sale__files__postage__comment5__box8
@@ -61,7 +61,7 @@
             .sale__files__postage__comment5__box9
               ※必須
           .sale__files__postage__form
-            = f.text_field :text, placeholder: "送料負担者を入力",class:"sale__files__postage__form__input"
+            = f.text_field :shipping_charges, placeholder: "送料負担者を入力",class:"sale__files__postage__form__input"
         .sale__files__shipping
           .sale__files__shipping__comment6
             .sale__files__shipping__comment6__box10
@@ -69,7 +69,7 @@
             .sale__files__shipping__comment6__box11
               ※必須
           .sale__files__shipping__form
-            = f.text_field :text, placeholder: "発送日の目安を入力",class:"sale__files__shipping__form__input"
+            = f.text_field :days_to_ship, placeholder: "発送日の目安を入力",class:"sale__files__shipping__form__input"
         .sale__files__area
           .sale__files__area__comment8
             .sale__files__area__comment8__box14
@@ -77,7 +77,7 @@
             .sale__files__area__comment8__box15
               ※必須
           .sale__files__area__form
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name,class:"sale__files__area__form__input"
+            = f.collection_select :area, Prefecture.all, :id, :name,class:"sale__files__area__form__input"
         .sale__files__price
           .sale__files__price__comment7
             .sale__files__price__comment7__box12
