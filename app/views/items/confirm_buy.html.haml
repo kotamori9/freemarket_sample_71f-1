@@ -1,0 +1,88 @@
+.single-container
+  .single-container__header
+    %h1
+      %a
+        = image_tag "logo.png", size: "180x53"
+  .single-container__main
+    .single-container__main__section
+      %h2
+        購入内容の確認
+      .single-container__main__section__top
+        .single-container__main__section__top__buy
+          .single-container__main__section__top__buy__box
+            %h3
+              = image_tag "71FB8RzWdsL.jpg", size: "80x80"
+            .single-container__main__section__top__buy__box__detail
+              %P.name
+                現場で使える Ruby on Rails 5速習実践ガイド
+              %P.price
+                %span
+                  1000
+                %span.fee
+                  （税込）送料込み
+
+      .single-container__main__section__bottom 
+        .single-container__main__section__bottom__inner
+          .single-container__main__section__bottom__inner__form
+            %ul.price
+              %li
+                .buy-price-label
+                  支払い金額
+                .buy-price-cell
+                  %span
+                    ¥1,000
+            %ul.point
+              %li
+                .checkbox
+                  = check_box_tag :check1
+                  = label_tag :check1, "ポイントを使用（所持ポイント: P0)"
+            .single-container__main__section__bottom__inner__form__buy
+              .single-container__main__section__bottom__inner__form__buy__content
+                .clearfix
+                  %h3
+                    支払い方法
+                  = link_to "変更する" 
+                %p
+                  クレジットカード
+                  %br
+                  *********1234
+                  %br
+                  有効期限 06/26
+
+                .card
+                  = image_tag "1200px-Mastercard-logo.svg.png", size: "34x20"
+
+            .single-container__main__section__bottom__inner__form__user
+              .single-container__main__section__bottom__inner__form__user__inner
+                .clearfix
+                  %h3
+                    配送先
+                  = link_to "変更する" 
+                .adderss
+                  %p
+                    〒150-0043
+                    %br
+                    東京都渋谷区道玄坂２丁目２３−１２ フォンティスビル ７F
+                    %br
+                    真子就有
+
+            .single-container__main__section__bottom__inner__form__btn
+              = link_to "購入する"
+  .single-container__footer
+    .nav
+      %ul
+        %li
+          %a
+            プライバシーポリシー
+        %li
+          %a
+            FURIMA利用規約
+        %li
+          %a
+            特定商取引に関する表記
+
+    %a
+      = image_tag "logo.png", size: "80x65"
+    %p
+      © Furima, Inc.
+
