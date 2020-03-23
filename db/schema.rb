@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_111456) do
     t.string "days_to_ship", null: false
     t.string "buyer_id"
     t.string "saler_id"
+    t.string "area", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

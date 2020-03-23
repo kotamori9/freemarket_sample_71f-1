@@ -12,6 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :days_to_ship, null: false
       t.string :buyer_id
       t.string :saler_id
+      t.string :area, null: false
       t.timestamps
     end
   end
