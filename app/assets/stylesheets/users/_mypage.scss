@@ -1,7 +1,13 @@
+.nowStatus {
+  height: 20px;
+  width: 200px;
+  padding-left: 40px;
+  font-size: 13px;
+}
 .myPage {
   display: flex;
   .myPageSide {
-    background-color: lightgray;
+    background-color: #f2f2f2;
     width: 40%;
     height: 300px;
     &__box {
@@ -9,26 +15,23 @@
       margin-left: 20px;
       height: 100%;
       width: 200px;
-      &__address {
-        background-color: tomato;
+      &__contents a {
+        display       : inline-block;
+        color: #000000;
+        text-decoration: none;
+        background-color: white;
         height: 40px;
+        width: 100%;
         margin-top: 10px;
-        border: black bold 1px;
+        text-align: center;
+        line-height: 40px;
       }
-      &__credit {
-        background-color: turquoise;
-        margin-top: 10px;
-        height: 40px;
-        border: black bold 1px;
-      }
-      &__top {
-        background-color: violet;
-        margin-top: 10px;
-        height: 40px;
-        border: black bold 1px;
+      a:hover {
+        box-shadow    : none;  
+        color         : #000066;  
+        background    : lightgray;  
       }
     }
-
   }
   .myPageMain {
     background-color: red;
