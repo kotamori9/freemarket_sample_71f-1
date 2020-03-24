@@ -44,6 +44,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -77,5 +79,5 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'active_hash'
-gem 'jp_prefecture'
+gem 'ancestry'
 gem 'jquery-rails'
