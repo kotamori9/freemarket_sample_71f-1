@@ -1,7 +1,7 @@
 .myPageSide
   .myPageSide__box
     .myPageSide__box__contents
-      =link_to new_users_addresses_path do
+      =link_to new_user_address_path(current_user) do
         ="住所登録"
     .myPageSide__box__contents
       =link_to "#" do
@@ -10,7 +10,7 @@
       =link_to "#" do
         ="プロフィール確認"
     .myPageSide__box__contents
-      =link_to "#" do
+      =link_to new_user_creditcard_path(current_user) do
         ="クレジットカード"
     .myPageSide__box__contents
       =link_to "/" do
