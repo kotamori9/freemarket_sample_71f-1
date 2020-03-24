@@ -34,12 +34,12 @@ Things you may want to cover:
 |first_name|string|null: false|
 |last_name_furigana|string|null: false|
 |first_name_furigana|string|null: false|
-|credit_card|string|null: false|
 |tell|string||
 ### usersAssociation
 - has_many :items
 - has_many :comments
 - has_many :addresses
+- has_many :creditcards
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -120,3 +120,12 @@ Things you may want to cover:
 ### categorysAssociation
 - has_many :items
 - has_ancestry
+
+## creditcardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|string|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+### creditcardsAssociation
+- belongs_to :user
