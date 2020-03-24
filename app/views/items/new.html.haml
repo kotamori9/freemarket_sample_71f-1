@@ -68,7 +68,7 @@
             .sale__files__categori__comment3__box6
               ※必須
           .sale__files__categori__form
-            = f.text_field :category, placeholder: "カテゴリを入力",class:"sale__files__categori__form__input"
+            = f.collection_select :category,Category.all, :id, :name, prompt:"選択してください",class:"sale__files__categori__form__input"
         .sale__files__brand
           .sale__files__brand__comment4
             .sale__files__brand__comment4__box7
