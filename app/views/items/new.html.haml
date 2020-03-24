@@ -5,15 +5,48 @@
   .sale
     .sale__files
       =form_with(model: @item, local: true) do |f|
-        = f.label :image, class: "image" do
-          =fa_icon 'image',class:'sale__files__img1'
-          = f.file_field :image, class: 'image__file1'
-        = f.label :image, class: "image2" do
-          =fa_icon 'image',class:'sale__files__img2'
-          = f.file_field :image, class: 'image__file2'
-        = f.label :image, class: "image3" do
-          =fa_icon 'image',class:'sale__files__img3'
-          = f.file_field :image, class: 'image__file3'
+        %h2.sale__files__head
+          商品の情報を入力
+        .sale__files__form
+          .sale__files__form__upload
+            %h3.sale__files__form__upload__head
+              出品画像
+              %span.require 必須
+            %p 最大5枚までアップロードできます
+            .post__drop__box__container
+              .prev-content
+              .label-content
+                %label{for: "item_photos_attributes_0_image", class: "abel-box", id: "label-box--0"}
+                  %pre.label-box__text-visible クリックしてファイルをアップロード
+              .hidden-content
+                = f.fields_for :photos do |i|
+                  = i.file_field :image, class: "hidden-field"
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][1][image]", id: "item_photos_attributes_1_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][2][image]", id: "item_photos_attributes_2_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][3][image]", id: "item_photos_attributes_3_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][4][image]", id: "item_photos_attributes_4_image" }
+      
+        
+
+        -# #image-box
+        -#   = f.fields_for :photos do |f|
+        -#     .js-file_group{"data-index" => "#{f.index}"}
+        -#       = f.file_field :image, class: 'js-file'
+        -#       %br/
+        -#       %span.js-remove 削除
+
+
+
+        -# = f.label :image, class: "image" do
+        -#   =fa_icon 'image',class:'sale__files__img1'
+        -#   = f.file_field :image, class: 'image__file1'
+        -# = f.label :image, class: "image2" do
+        -#   =fa_icon 'image',class:'sale__files__img2'
+        -#   = f.file_field :image, class: 'image__file2'
+        -# = f.label :image, class: "image3" do
+        -#   =fa_icon 'image',class:'sale__files__img3'
+        -#   = f.file_field :image, class: 'image__file3'
+
         .sale__files__name
           .sale__files__name__comment1
             .sale__files__name__comment1__box1
