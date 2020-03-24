@@ -8,7 +8,9 @@
         #image-box
           = f.fields_for :photos do |image|
             .js-file_group{"data-index" => "#{image.index}"}
-              = image.file_field :image, class: 'js-file'
+              = f.label :image, class: "image" do
+                =fa_icon 'image',class:'sale__files__img1'
+                = image.file_field :image, class: 'js-file'
 
               
               
