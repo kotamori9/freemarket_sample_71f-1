@@ -6,9 +6,9 @@
     .sale__files
       =form_with(model: @item, local: true) do |f|
         #image-box
-          = f.fields_for :photos do |i|
-            .js-file_group{"data-index" => "#{i.index}"}
-              = i.file_field :image, class: 'js-file'
+          = f.fields_for :photos do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              = image.file_field :image, class: 'js-file'
 
 
         -# = f.label :image, class: "image" do
