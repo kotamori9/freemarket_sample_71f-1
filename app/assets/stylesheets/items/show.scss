@@ -149,6 +149,20 @@
                text-decoration: none;
               }
             }
+            .center{
+              margin-right: auto;
+              border-radius: 40px;
+              color: #3ccace;
+              border: 1px solid #ffb340;
+              text-decoration: none;
+              ul{
+                padding: 6px 10px;
+              }
+              a{
+               text-decoration: none;
+               font-size: 20px;
+
+            }}
             .right{
               display: inline-block;
               border-radius: 4px;

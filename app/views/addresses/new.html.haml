@@ -1,1 +1,57 @@
-住所登録画面
+.registrationHeader
+  .registrationHeader__contents
+    .header__contents__logo
+      = link_to image_tag("logo.png", size: :'140x40', class: "registrationHeader__contents__logo__icon"), "/"
+    .registrationHeader__contents__status
+.registrationBody
+  .registrationBody__title
+    %h2 住所登録画面
+  .registrationBody__form
+    =form_for @address,url: users_addresses_path do |f|
+      .registrationBody__form__field
+        = f.label :"送り先氏名"
+        %em 必須
+        %br/
+        = f.text_field :destination_name, autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__field
+        = f.label :"送り先ふりがな"
+        %em 必須
+        %br/
+        = f.text_field :destination_name_furigana, autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__field
+        = f.label :"郵便番号"
+        %em 必須
+        %br/
+        = f.text_field :postal_code,id: "address_postal_code", autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__field
+        = f.label :"都道府県"
+        %em 必須
+        %br/
+        = f.text_field :prefecture,id: "address_prefecture", collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県', autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__field
+        = f.label :"市町村"
+        %em 必須
+        %br/
+        = f.text_field :city,id: "address_city", autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__field
+        = f.label :"番地"
+        %em 必須
+        %br/
+        = f.text_field :address_number,id: "address_address_number", autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__field
+        = f.label :"アパート・ビル名など"
+        %br/
+        = f.text_field :any_address_info, autofocus: true, autocomplete: "",placeholder: "",style: "width:300px; height:50px;"
+      .registrationBody__form__actions
+        = f.submit "住所登録", class: 'button'
+    .registrationBody__form__text
+.registrationFooter
+  .registrationFooter__contents
+    .registrationFooter__contents__top
+      %ur
+        %li プライバシーポリシー
+        %li フリマ利用規約
+        %li 特定商取引に関する表記
+    .registrationFooter__contents__logo
+      %ur
+        %li ©frima, Inc.
