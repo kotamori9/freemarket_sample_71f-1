@@ -17,6 +17,11 @@ class ItemsController < ApplicationController
       # redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
       redirect_to root_path
     end
+    @child_categories = Category.where(ancestry: params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def edit
