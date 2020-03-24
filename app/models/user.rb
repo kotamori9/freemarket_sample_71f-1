@@ -12,5 +12,6 @@ class User < ApplicationRecord
 
   # has_many :items
   # has_many :comments
+  has_one :creditcard
   has_one :address
 end
