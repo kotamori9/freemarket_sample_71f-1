@@ -7,7 +7,7 @@
   .registrationBody__title
     %h2 住所登録画面
   .registrationBody__form
-    =form_for @address,url: users_addresses_path do |f|
+    =form_for @address,url: user_addresses_path do |f|
       .registrationBody__form__field
         = f.label :"送り先氏名"
         %em 必須
