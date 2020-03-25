@@ -18,9 +18,6 @@
           .pcHeader__headerInner__nav__listsRight__item--login
             =link_to user_path(current_user) do
               ="マイページ"
-          .pcHeader__headerInner__nav__listsRight__item--new
-            =link_to destroy_user_session_path, method: :delete do
-              ="ログアウト"
         - else
           .pcHeader__headerInner__nav__listsRight__item--login
             =link_to new_user_session_path do
@@ -38,14 +35,14 @@
         =link_to "#" do
           ="住所確認"
       .userpagebody__leftside__box__contents
-        =link_to "#" do
-          ="プロフィール確認"
-      .userpagebody__leftside__box__contents
         =link_to new_user_creditcard_path(current_user), data: {"turbolinks" => false} do
           ="クレジットカード"
       .userpagebody__leftside__box__contents
         =link_to "/" do
-          ="トップページへ"
+          ="トップページ"
+      .userpagebody__leftside__box__contents
+        =link_to destroy_user_session_path, method: :delete do
+          ="ログアウト"
   .userpagebody__rightside
     .userpagebody__rightside__crrentUser
       = @users.nickname

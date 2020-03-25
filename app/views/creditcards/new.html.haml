@@ -18,16 +18,6 @@
           .pcHeader__headerInner__nav__listsRight__item--login
             =link_to user_path(current_user) do
               ="マイページ"
-          .pcHeader__headerInner__nav__listsRight__item--new
-            =link_to destroy_user_session_path, method: :delete do
-              ="ログアウト"
-        - else
-          .pcHeader__headerInner__nav__listsRight__item--login
-            =link_to new_user_session_path do
-              ="ログイン"
-          .pcHeader__headerInner__nav__listsRight__item--new
-            =link_to new_user_registration_path do
-              ="新規会員登録"
 .userpagebody
   .userpagebody__leftside
     .userpagebody__leftside__box
@@ -45,7 +35,7 @@
           ="クレジットカード"
       .userpagebody__leftside__box__contents
         =link_to "/" do
-          ="トップページへ"
+          ="トップページ"
   .userpagebody__rightside
     .userpagebody__rightside__crrentUser
       クレジットカード新規登録
