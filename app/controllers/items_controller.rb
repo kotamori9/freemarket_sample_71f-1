@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
+  # before_action :set_item, only: [:edit, :show]
 
   def index
   end
@@ -20,7 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    
   end
   
   def update
@@ -32,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   private
@@ -40,7 +42,7 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
   end
 
 end
