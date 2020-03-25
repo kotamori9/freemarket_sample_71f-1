@@ -47,13 +47,12 @@
             }
           }
           .detail{
-         
             margin-bottom: 30px;
-            ul{
+            // ul{
               line-height: 1.5; 
               text-decoration: none;
               font-size: 18px;
-            }
+            // }
           }
           .table{
             width: 100%;
@@ -147,6 +146,7 @@
               }
               a{
                text-decoration: none;
+               color: #3ccace;
               }
             }
             .center{
@@ -161,6 +161,7 @@
               a{
                text-decoration: none;
                font-size: 20px;
+               color: #3ccace;
 
             }}
             .right{
@@ -173,7 +174,10 @@
               ul{
                 margin:6px 10px;
               }
-            }
+              a{
+                text-decoration: none;
+                color: #333;
+              }
         }
       }
         .middle__contents{
@@ -245,4 +249,4 @@
         font-size: 22px;
         position: relative;
       }
-  }}
+  }}}
