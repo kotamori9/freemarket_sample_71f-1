@@ -1,63 +1,149 @@
-%h1 Creditcards#new
-%p Find me in app/views/creditcards/new.html.haml
-
-= form_tag(pay_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %label カード番号
-  .require 必須
-  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-  %ul.signup-card-list
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"49px",height:"20px"
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?238737266",width:"34px",height:"20px"
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?238737266",width:"30px",height:"20px"
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?238737266",width:"32px",height:"20px"
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?238737266",width:"21px",height:"20px"
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?238737266",width:"32px",height:"20px"
-    %li
-      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"32px",height:"20px"
-  %br
-  %label 有効期限
-  .require 必須
-  %select#exp_month{name: "exp_month", type: "text"}
-    %option{value: ""} --
-    %option{value: "1"}01
-    %option{value: "2"}02
-    %option{value: "3"}03
-    %option{value: "4"}04
-    %option{value: "5"}05
-    %option{value: "6"}06
-    %option{value: "7"}07
-    %option{value: "8"}08
-    %option{value: "9"}09
-    %option{value: "10"}10
-    %option{value: "11"}11
-    %option{value: "12"}12
-  %span 月/
-  %select#exp_year{name: "exp_year", type: "text"}
-    %option{value: ""} --
-    %option{value: "2019"}19
-    %option{value: "2020"}20
-    %option{value: "2021"}21
-    %option{value: "2022"}22
-    %option{value: "2023"}23
-    %option{value: "2024"}24
-    %option{value: "2025"}25
-    %option{value: "2026"}26
-    %option{value: "2027"}27
-    %option{value: "2028"}28
-    %option{value: "2029"}29
-  %span 年
-  %br
-  %br
-  %label セキュリティコード
-  .require 必須
-  = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-  %br
-  #card_token
-  %br
-  = submit_tag "追加する", id: "token_submit"
+.pcHeader
+  .pcHeader__headerInner
+    .pcHeader__headerInner__mainHeader
+      = image_tag "logo.png",size: :'140x40', class: "pcHeader__headerInner__mainHeader__icon"
+      = form_with(url: '', local: true,method: :get,class:"pcHeader__headerInner__mainHeader__searchBox") do |form|
+        = form.text_field :keyword,placeholder: "投稿を検索する",class: "pcHeader__headerInner__mainHeader__searchBox__input"
+        = form.submit '', class: "pcHeader__headerInner__mainHeader__searchBox__btn"
+    .pcHeader__headerInner__nav
+      .pcHeader__headerInner__nav__listsLeft
+        .pcHeader__headerInner__nav__listsLeft__item--first
+          =link_to "/" do
+            ="カテゴリ"
+        .pcHeader__headerInner__nav__listsLeft__item
+          =link_to "/" do
+            ="ブランド"
+      .pcHeader__headerInner__nav__listsRight
+        - if user_signed_in?
+          .pcHeader__headerInner__nav__listsRight__item--login
+            =link_to user_path(current_user) do
+              ="マイページ"
+          .pcHeader__headerInner__nav__listsRight__item--new
+            =link_to destroy_user_session_path, method: :delete do
+              ="ログアウト"
+        - else
+          .pcHeader__headerInner__nav__listsRight__item--login
+            =link_to new_user_session_path do
+              ="ログイン"
+          .pcHeader__headerInner__nav__listsRight__item--new
+            =link_to new_user_registration_path do
+              ="新規会員登録"
+.userpagebody
+  .userpagebody__leftside
+    .userpagebody__leftside__box
+      .userpagebody__leftside__box__contents
+        =link_to new_user_address_path(current_user) do
+          ="住所登録"
+      .userpagebody__leftside__box__contents
+        =link_to "#" do
+          ="住所確認"
+      .userpagebody__leftside__box__contents
+        =link_to "#" do
+          ="プロフィール確認"
+      .userpagebody__leftside__box__contents
+        =link_to new_user_creditcard_path(current_user), data: {"turbolinks" => false} do
+          ="クレジットカード"
+      .userpagebody__leftside__box__contents
+        =link_to "/" do
+          ="トップページへ"
+  .userpagebody__rightside
+    .userpagebody__rightside__crrentUser
+      クレジットカード新規登録
+    .userpagebody__rightside__transaction
+      = form_tag(pay_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        %label カード番号
+        %em 必須
+        %br/
+        -# .require 必須
+        = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        %ul.signup-card-list
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?238737266",width:"98px",height:"40px"
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?238737266",width:"68px",height:"40px"
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?238737266",width:"60px",height:"40px"
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?238737266",width:"64px",height:"40px"
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?238737266",width:"42px",height:"40px"
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?238737266",width:"64px",height:"40px"
+          %li
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"64px",height:"40px"
+        %br
+        %label 有効期限
+        %em 必須
+        %br/
+        -# .require 必須
+        %select#exp_month{name: "exp_month", type: "text"}
+          %option{value: ""} --
+          %option{value: "1"}01
+          %option{value: "2"}02
+          %option{value: "3"}03
+          %option{value: "4"}04
+          %option{value: "5"}05
+          %option{value: "6"}06
+          %option{value: "7"}07
+          %option{value: "8"}08
+          %option{value: "9"}09
+          %option{value: "10"}10
+          %option{value: "11"}11
+          %option{value: "12"}12
+        %span 月/
+        %select#exp_year{name: "exp_year", type: "text"}
+          %option{value: ""} --
+          %option{value: "2019"}19
+          %option{value: "2020"}20
+          %option{value: "2021"}21
+          %option{value: "2022"}22
+          %option{value: "2023"}23
+          %option{value: "2024"}24
+          %option{value: "2025"}25
+          %option{value: "2026"}26
+          %option{value: "2027"}27
+          %option{value: "2028"}28
+          %option{value: "2029"}29
+        %span 年
+        %br
+        %br
+        %label セキュリティコード
+        %em 必須
+        %br/
+        -# .require 必須
+        = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+        %br
+        #card_token
+        %br
+        = submit_tag "追加する", id: "token_submit"
+.userpagefooter
+  .userpagefooter__contents
+    .userpagefooter__contents__content
+      .userpagefooter__contents__content__head
+        .userpagefooter__contents__content__head__title
+          FURIMAについて
+        .userpagefooter__contents__content__head__main
+          %ul
+            %li< 会社概要（運営会社）
+            %li< プライバシーポリシー
+            %li< FURIMA利用規約
+            %li< ポイントに関する特約
+      .userpagefooter__contents__content__head
+        .userpagefooter__contents__content__head__title
+          FURIMAを見る
+        .userpagefooter__contents__content__head__main
+          %ul
+            %li< カテゴリー一覧
+            %li< ブランド一覧
+      .userpagefooter__contents__content__head
+        .userpagefooter__contents__content__head__title
+          ヘルプ＆ガイド
+        .userpagefooter__contents__content__head__main
+          %ul
+            %li< FURIMAガイド
+            %li< FURIMAロゴ利用ガイドライン
+            %li< お知らせ
+  .userpagefooter__logo
+    = image_tag "logo-white.png", size: "160x46"
+  .userpagefooter__name
+    © FURIMA

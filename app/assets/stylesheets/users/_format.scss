@@ -131,10 +131,39 @@
     }
     &__transaction {
       background-color: white;
-      height: 60%;
       width: 90%;
       margin-top: 15px;
       margin-left: 30px;
+      padding-left: 40px;
+      li {
+        display: inline;
+      }
+      em {
+        font-size: 13px;
+        background-color: red;
+        color:white;
+        border-radius: 2px;
+      }
+      #token_submit,button {
+        display       : inline-block;
+        border-radius : 5%; 
+        font-size     : 18pt;  
+        text-align    : center;
+        cursor        : pointer;  
+        padding       : 12px 12px; 
+        color         : #ffffff; 
+        background-color: #3CCACE;
+        line-height   : 1em;   
+        transition    : .3s;   
+        box-shadow    : 6px 6px 3px #666666;
+        height: 50px;
+        width: 300px;
+      }
+      #token_submit:hover,button:hover {
+        box-shadow    : none;  
+        color         : #000066;  
+        background    : #ffffff;  
+      }
     }
   }
 }

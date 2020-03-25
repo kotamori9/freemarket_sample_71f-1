@@ -1,10 +1,91 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.pcHeader
+  .pcHeader__headerInner
+    .pcHeader__headerInner__mainHeader
+      = image_tag "logo.png",size: :'140x40', class: "pcHeader__headerInner__mainHeader__icon"
+      = form_with(url: '', local: true,method: :get,class:"pcHeader__headerInner__mainHeader__searchBox") do |form|
+        = form.text_field :keyword,placeholder: "投稿を検索する",class: "pcHeader__headerInner__mainHeader__searchBox__input"
+        = form.submit '', class: "pcHeader__headerInner__mainHeader__searchBox__btn"
+    .pcHeader__headerInner__nav
+      .pcHeader__headerInner__nav__listsLeft
+        .pcHeader__headerInner__nav__listsLeft__item--first
+          =link_to "/" do
+            ="カテゴリ"
+        .pcHeader__headerInner__nav__listsLeft__item
+          =link_to "/" do
+            ="ブランド"
+      .pcHeader__headerInner__nav__listsRight
+        - if user_signed_in?
+          .pcHeader__headerInner__nav__listsRight__item--login
+            =link_to user_path(current_user) do
+              ="マイページ"
+          .pcHeader__headerInner__nav__listsRight__item--new
+            =link_to destroy_user_session_path, method: :delete do
+              ="ログアウト"
+        - else
+          .pcHeader__headerInner__nav__listsRight__item--login
+            =link_to new_user_session_path do
+              ="ログイン"
+          .pcHeader__headerInner__nav__listsRight__item--new
+            =link_to new_user_registration_path do
+              ="新規会員登録"
+.userpagebody
+  .userpagebody__leftside
+    .userpagebody__leftside__box
+      .userpagebody__leftside__box__contents
+        =link_to new_user_address_path(current_user) do
+          ="住所登録"
+      .userpagebody__leftside__box__contents
+        =link_to "#" do
+          ="住所確認"
+      .userpagebody__leftside__box__contents
+        =link_to "#" do
+          ="プロフィール確認"
+      .userpagebody__leftside__box__contents
+        =link_to new_user_creditcard_path(current_user), data: {"turbolinks" => false} do
+          ="クレジットカード"
+      .userpagebody__leftside__box__contents
+        =link_to "/" do
+          ="トップページへ"
+  .userpagebody__rightside
+    .userpagebody__rightside__crrentUser
+      クレジットカード登録情報
+    .userpagebody__rightside__transaction
+      = "**** **** **** " + @default_card_information.last4
+      %br
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      = exp_month + " / " + exp_year
+      = form_tag(delete_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        %input{ type: "hidden", name: "card_id", value: "" }
+        %button 削除する
+.userpagefooter
+  .userpagefooter__contents
+    .userpagefooter__contents__content
+      .userpagefooter__contents__content__head
+        .userpagefooter__contents__content__head__title
+          FURIMAについて
+        .userpagefooter__contents__content__head__main
+          %ul
+            %li< 会社概要（運営会社）
+            %li< プライバシーポリシー
+            %li< FURIMA利用規約
+            %li< ポイントに関する特約
+      .userpagefooter__contents__content__head
+        .userpagefooter__contents__content__head__title
+          FURIMAを見る
+        .userpagefooter__contents__content__head__main
+          %ul
+            %li< カテゴリー一覧
+            %li< ブランド一覧
+      .userpagefooter__contents__content__head
+        .userpagefooter__contents__content__head__title
+          ヘルプ＆ガイド
+        .userpagefooter__contents__content__head__main
+          %ul
+            %li< FURIMAガイド
+            %li< FURIMAロゴ利用ガイドライン
+            %li< お知らせ
+  .userpagefooter__logo
+    = image_tag "logo-white.png", size: "160x46"
+  .userpagefooter__name
+    © FURIMA
