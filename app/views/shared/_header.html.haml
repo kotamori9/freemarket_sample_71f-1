@@ -18,9 +18,6 @@
           .pcHeader__headerInner__nav__listsRight__item--login
             =link_to user_path(current_user) do
               ="マイページ"
-          .pcHeader__headerInner__nav__listsRight__item--new
-            =link_to destroy_user_session_path, method: :delete do
-              ="ログアウト"
         - else
           .pcHeader__headerInner__nav__listsRight__item--login
             =link_to new_user_session_path do

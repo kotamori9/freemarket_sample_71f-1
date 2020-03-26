@@ -15,7 +15,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postagehash
   belongs_to_active_hash :shippinghash
   belongs_to_active_hash :Aprefecture
-
 end
 
 
