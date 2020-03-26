@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create]
-  # before_action :set_item, only: [:edit, :show]
+  # before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
   end
@@ -8,6 +7,22 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.new
+
+    #セレクトボックスの初期値設定
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+    end
+  end
+
+    
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   def create
@@ -18,11 +33,7 @@ class ItemsController < ApplicationController
       # redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
       redirect_to root_path
     end
-    @child_categories = Category.where(ancestry: params[:keyword])
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    
   end
 
   def edit
@@ -41,13 +52,15 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+
   private
   def item_params
-    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:price,:area, 
+      photos_attributes: [:image, :_destroy, :id])
   end
 
-  def set_item
-    # @item = Item.find(params[:id])
-  end
+  # def set_item
+  #   @item = Item.find(params[:id])
+  # end
 
 end

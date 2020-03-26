@@ -68,7 +68,11 @@
             .sale__files__categori__comment3__box6
               ※必須
           .sale__files__categori__form
-            = f.collection_select :category,Category.all, :id, :name, prompt:"選択してください",class:"sale__files__categori__form__input"
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+                //親カテゴリーのセレクトボックスの生成
+                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
         .sale__files__brand
           .sale__files__brand__comment4
             .sale__files__brand__comment4__box7
