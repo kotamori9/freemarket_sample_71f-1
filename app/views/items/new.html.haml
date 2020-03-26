@@ -4,47 +4,45 @@
 
   .sale
     .sale__files
-      =form_with(model: @item, local: true) do |f|
-        #image-box
-          = f.fields_for :photos do |image|
-            .js-file_group{"data-index" => "#{image.index}"}
-              = f.label :image, class: "image" do
-                =fa_icon 'image',class:'sale__files__img1'
-                = image.file_field :image, class: 'js-file'
+      = form_with model:@item, local:true do |f|
+        %h2.sell__block__head
+          商品の情報を入力
+        .sell__block__form
+          .sell__block__form__upload
+            %h3.sell__block__form__upload__head
+              出品画像
+              %span.require 必須
+            %p 最大5枚までアップロードできます
+            .post__drop__box__container
+              .prev-content
 
+                //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
+                - @item.photos.each do |image|
+                  .preview-box
+                    .upper-box
+                      -# = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                    .lower-box
+                      -# .update-box
+                      -#   %label.edit-btn 編集
+                      -# .delete-box
+                      -#   .delete-btn
+                      -#     %span 削除
+              .label-content
               
-              
+                //プレビューの数に合わせてforオプションを指定
+                = f.label :"photos_attributes_#{@item.photos.length}_image", class: "label-box", id: "label-box--#{@item.photos.length}" do
+                  %pre.label-box__text-visible クリックしてファイルをアップロード
+              .hidden-content
+                = f.fields_for :photos do |i|
 
+                  //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                  = i.file_field :image, class: "hidden-field"
+                  = i.check_box:_destroy, class: "hidden-checkbox"
 
-        -# 画像のプレビューを実装する時コメントアウトを外す
-        -# #image-box
-        -#   #previews
-        -#     - if @item.persisted?
-        -#       - @item.photos.each_with_index do |photo, i|
-        -#         = photo_tag photo.image.url, data: { index: i }, width: "100", height: '100'
-        -#   = f.fields_for :photos do |photo|
-        -#     .js-file_group{"data-index" => "#{photo.index}"}
-        -#       = photo.file_field :image, class: 'js-file'
-        -#       %br/
-        -#       %span.js-remove 削除
-        -#     - if @item.persisted?
-        -#       = photo.check_box :_destroy, data:{ index: photo.index }, class: 'hidden-destroy'
-        -#   - if @item.persisted?
-        -#     .js-file_group{"data-index" => "#{@item.photos.count}"}
-        -#       = file_field_tag :image, name: "item[photos_attributes][#{@item.photos.count}][image]", class: 'js-file'
-        -#       .js-remove 削除
-        -# = f.submit
-
-        -# = f.label :image, class: "image" do
-        -#   =fa_icon 'image',class:'sale__files__img1'
-        -#   = f.file_field :image, class: 'image__file1'
-        -# = f.label :image, class: "image2" do
-        -#   =fa_icon 'image',class:'sale__files__img2'
-        -#   = f.file_field :image, class: 'image__file2'
-        -# = f.label :image, class: "image3" do
-        -#   =fa_icon 'image',class:'sale__files__img3'
-        -#   = f.file_field :image, class: 'image__file3'
-
+                  //5つのfile_fieldを準備するに当たって、足りない分を表示
+                - @item.photos.length.upto(4) do |i|
+                  %input{name: "item[photos_attributes][#{i}][image]", id: "item_photos_attributes_#{i}_image", class:"hidden-field", type:"file"}
+          
         .sale__files__name
           .sale__files__name__comment1
             .sale__files__name__comment1__box1
@@ -71,7 +69,7 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
         .sale__files__brand
           .sale__files__brand__comment4

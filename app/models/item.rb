@@ -9,6 +9,26 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User"
   belongs_to :category
 
+  # バリテーション
+
+  # 商品名が必須
+  validates :name, presence: true
+  # 商品の説明が必須
+  validates :description, presence: true
+  # カテゴリーの情報が必須
+  validates :category_id, presence: true
+  # 商品の状態についての情報が必須
+  validates :status, presence: true
+  # 配送料の負担についての情報が必須
+  validates :shipping_charges, presence: true
+  # 発送元の地域についての情報が必須
+  validates :area, presence: true
+  # 発送までの日数についての情報が必須
+  validates :days_to_ship, presence: true
+  # 価格についての情報が必須
+  validates :price, presence: true
+
+
   # アクティブハッシュ
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :statushash

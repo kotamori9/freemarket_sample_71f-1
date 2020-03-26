@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.new
+    # @photos = @item.photos.build
 
       #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
@@ -37,15 +38,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @item = Item.find(params[:id])
   end
   
   def update
-    if @item.update(item_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
+    # if @item.update(item_params)
+    #   redirect_to root_path
+    # else
+    #   render :edit
+    # end
+
+    @item = Item.find(params[:id])
+    @item.update(item_update_params)
   end
 
   def show
@@ -54,11 +58,15 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:brand,:category,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id)
+    params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
   end
 
   # def set_item
   #   # @item = Item.find(params[:id])
   # end
+
+  def item_update_params
+    params.require(:item).permit(:name,[photos_attributes: [:image, :_destroy, :id]])
+  end
 
 end
