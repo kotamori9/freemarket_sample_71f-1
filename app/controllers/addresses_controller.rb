@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
 
   def index
-    @address = Address.all(user_id: current_user.id)
+    @addresses = Address.includes(:user)
   end
 
   def new
