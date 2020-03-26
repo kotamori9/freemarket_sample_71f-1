@@ -49,11 +49,17 @@
         .userpagebody__rightside__transaction__destination_name
         =address.destination_name
         .userpagebody__rightside__transaction__destination_name_furigana
+        =address.destination_name_furigana
         .userpagebody__rightside__transaction__postal_code
+        =address.postal_code
         .userpagebody__rightside__transaction__prefecture
+        =address.prefecture
         .userpagebody__rightside__transaction__city
+        =address.city
         .userpagebody__rightside__transaction__address_number
+        =address.address_number
         .userpagebody__rightside__transaction__any_address_info
+        =address.any_address_info
 
       -# t.integer :user_id,                   null: false
       -# t.string :destination_name,           null: false
