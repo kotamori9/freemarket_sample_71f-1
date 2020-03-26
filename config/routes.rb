@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'creditcards/show'
   devise_for :users
   root to: 'items#index'
-  resources :items, only: [:index, :new, :create]
+  resources :items, only: [:index, :new, :create, :edit, :show]
   resources :users, only: [:show] do
     resources :addresses, only: [:new, :create]
     resources :creditcards, only: [:new, :show] do
