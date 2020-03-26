@@ -8,7 +8,8 @@
         .top__contents
           .item__box
             .product
-              商品：ステーキ
+              商品：
+              = @item.name
             .img__box
               = image_tag "stake.png", size: "560x346"
               .img__box1
@@ -17,19 +18,11 @@
                 = image_tag "stake.png", size: "140x87"
             .price__box
               .price1
-                ¥30000
+                = @item.price
               .price2
                 (税込)送料込み
             .detail
-              %ul
-                %li
-                  商品の詳細を書いていく所、長文になる可能性がある
-                %li
-                  商品の詳細を書いていく所、長文になる可能性がある
-                %li
-                  商品の詳細を書いていく所、長文になる可能性がある
-                %li
-                  商品の詳細を書いていく所、長文になる可能性がある               
+              = simple_format @item.description              
             .table
               .table__left
                 .left1
@@ -46,37 +39,44 @@
                   発送目安
               .table__right
                 .right1
-                  フリマ太郎
+                  = @item.user
                 .right2
-                  女性服
+                  = @item.category
                 .right3
-                  なんか高級
+                  = @item.brand
                 .right4
-                  無料
+                  = @item.shipping_charges
                 .right5
-                  どこか
+                  = @item.area
                 .right6
-                  １週間           
+                  = @item.days_to_ship        
             .tag
-              .left
-                %ul
-                  %i
-                    = fa_icon 'star'
-                  %a
-                    = link_to '購入画面に進む', 'edit_item_path'
+              - if user_signed_in?
+                .left
+                  =link_to user_path(current_user) do
+                    %ul
+                      %a
+                        = fa_icon 'star'
+                        = link_to '商品を編集する', 'edit_item_path'
+                .right
+                  =link_to destroy_user_session_path, method: :delete do
+                    %ul
+                      %a
+                        = fa_icon 'flag'
+                        = link_to '商品を削除する', 'edit_item_path'      
+              - else 
+                .center
+                  =link_to edit_item_path do
+                    %ul
+                      %a
+                        = fa_icon 'star'
+                        = link_to '商品を購入する', 'edit_item_path'    
 
-              .center
-                %ul
-                  %i
-                    = fa_icon 'star'
-                  %a
-                    = link_to '商品を編集する', 'edit_item_path'
-              .right  
-                %ul
-                  %i
-                    = fa_icon 'flag'
-                  %a
-                  = link_to '商品を削除する', 'edit_item_path'
+                -# .right  
+                -#   =link_to destroy_user_session_path, method: :delete do
+                -#     %ul
+                -#       %a
+                -#         = link_to '商品を削除する', 'edit_item_path'
             
           .middle__contents
             .content
@@ -93,16 +93,13 @@
                   %a
                     コメントする
         .option__area
-          .left
-            -# =link to 
+          .left 
             ＜前の商品
-          .right
-            -# =link to 
+          .right    
             後ろの商品＞      
-        .relateditems
-          -# =link to 
+        .relateditems 
           商品をもっと見る
-  .footer
-    =render "/shared/bunner"        
-  .footer
-    =render "/shared/footer"
+    -# .footer
+    -#   = render "/shared/bunner"        
+    .footer
+      = render "/shared/footer"
