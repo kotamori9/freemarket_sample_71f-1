@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show] do
-    resources :addresses, only: [:new, :create]
+    resources :addresses, only: [:new, :create, :index, :edit]
     resources :creditcards, only: [:new, :show] do
       collection do
         post 'show', to: 'creditcards#show'
