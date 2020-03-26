@@ -69,7 +69,7 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
         .sale__files__brand
           .sale__files__brand__comment4

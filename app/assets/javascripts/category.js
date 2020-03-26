@@ -1,7 +1,7 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
@@ -41,7 +41,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){
-        $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
+        $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
         $('#grandchildren_wrapper').remove();
         $('#size_wrapper').remove();
         $('#brand_wrapper').remove();
