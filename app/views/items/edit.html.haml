@@ -74,8 +74,11 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                -# = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+                -# = f.collection_select :category_id, Category, :name, prompt: true
+                -# = f.collection_select :category_id, Category.all, :id, :name, prompt: true
+                = f.collection_select :category_id, Category.all.order("id ASC").limit(13), :id, :name, prompt: true
+                = f.collection_select :category_id, Category.where(id: @item.category.parent.id), :id, :name, prompt: true
+                = f.collection_select :category_id, Category.where(id: @item.category_id), :id, :name, prompt: true
         .sale__files__brand
           .sale__files__brand__comment4
             .sale__files__brand__comment4__box7
