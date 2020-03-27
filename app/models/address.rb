@@ -15,5 +15,5 @@ class Address < ApplicationRecord
 
   # アクティブハッシュ用
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :Aprefecture
+  # belongs_to_active_hash :Aprefecture
 end
