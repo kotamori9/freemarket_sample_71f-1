@@ -29,11 +29,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    # binding.pry
     if @item.save
-      redirect_to root_path(@item)
+      redirect_to @item, notice: "商品を登録しました"
+      
+      # redirect_to root_path(@item), notice: "商品が出品されました。"
     else
       # redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
-      redirect_to root_path
+      redirect_to root_path, notice: "商品を登録に失敗しました"
     end
   end
 
