@@ -53,24 +53,25 @@
             .tag
               - if user_signed_in?
                 .left
-                  =link_to user_path(current_user) do
-                    %ul
-                      %a
-                        = fa_icon 'star'
-                        = link_to '商品を編集する', 'edit_item_path'
-                .right
-                  =link_to destroy_user_session_path, method: :delete do
-                    %ul
-                      %a
-                        = fa_icon 'flag'
-                        = link_to '商品を削除する', 'edit_item_path'      
-              - else 
-                .center
-                  =link_to edit_item_path do
-                    %ul
-                      %a
-                        = fa_icon 'star'
-                        = link_to '商品を購入する', 'edit_item_path'    
+                  =link_to edit_item_path(current_user) do
+                    編集する
+              -#       %ul
+              -#         %a
+              -#           = fa_icon 'star'
+              -#           = link_to '商品を編集する', 'edit_item_path'
+              -#   .right
+              -#     =link_to destroy_user_session_path, method: :delete do
+              -#       %ul
+              -#         %a
+              -#           = fa_icon 'flag'
+              -#           = link_to '商品を削除する', 'edit_item_path'      
+              -# - else 
+              -#   .center
+              -#     =link_to edit_item_path do
+              -#       %ul
+              -#         %a
+              -#           = fa_icon 'star'
+              -#           = link_to '商品を購入する', 'edit_item_path'    
 
                 -# .right  
                 -#   =link_to destroy_user_session_path, method: :delete do

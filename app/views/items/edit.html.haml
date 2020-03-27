@@ -21,9 +21,10 @@
               .prev-content
 
                 //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
-                - @item.photos.each do |image|
+                - @item.photos.each do |photo|
                   .preview-box
                     .upper-box
+                      = image_tag photo.image.url
                       -# = image_tag image.image.url, width: "112", height: "112", alt: "preview"
                     .lower-box
                       -# .update-box
@@ -73,7 +74,7 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                -# = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
         .sale__files__brand
           .sale__files__brand__comment4
