@@ -45,6 +45,12 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @photo = Photo.find(params[:id])
+
+    @category_parent_array = ["---"]
+    #データベースから、親カテゴリーのみ抽出し、配列化
+    Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+    end
     # @photo = Photo.find(params[:id])
   end
   
