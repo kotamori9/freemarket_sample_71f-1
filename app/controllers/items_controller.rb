@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @photo = Photo.find(params[:id])
+    @photo = Photo.find_by_id(params[:id])
 
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみ抽出し、配列化
