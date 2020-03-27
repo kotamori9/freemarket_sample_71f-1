@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   # get 'creditcards/show'
   devise_for :users
   root to: 'items#index'
-  resources :items, only: [:index, :new, :create, :edit, :show] do
+  resources :items, only: [:index, :new, :create, :edit, :show, :destroy] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+    resources :photos, only: [:index] 
   end
   resources :users, only: [:show] do
     resources :addresses, only: [:new, :create, :index, :edit]
