@@ -67,6 +67,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @categories = Category.find(params[:id])
+
+    # @items = Item.all.includes(:users)
   end
 
   private
