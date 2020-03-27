@@ -15,7 +15,7 @@ CarrierWave.configure do |config|
     }
     config.fog_directory  = 'freemarketample71f' #S3のバケット名
     # config.asset_host = 'https://freemarketample71f.amazonaws.com'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarketample71f'
+    # config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarketample71f'
 
   else
     config.storage :file # 開発環境:public/uploades下に保存
