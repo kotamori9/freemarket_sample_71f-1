@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.new
-    # @photo = @item.photos.build
+    # @photos = @item.photos.build
 
       #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
@@ -32,25 +32,19 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to @item, notice: "商品を登録しました"
-      
-      # redirect_to root_path(@item), notice: "商品が出品されました。"
+      redirect_to @item, notice: "商品名#{@item.name}を登録しました"
     else
-      # redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
-      redirect_to root_path, notice: "商品を登録に失敗しました"
+      redirect_back fallback_location: @item,
+      flash: {
+        item: @item,
+        error_messages: @item.errors.full_messages
+      }
     end
   end
 
   def edit
     @item = Item.find(params[:id])
-    @photo = Photo.find_by_id(params[:id])
-
-    @category_parent_array = ["---"]
-    #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-    end
-    # @photo = Photo.find(params[:id])
+    @photo = Photo.find(params[:id])
   end
   
   def update

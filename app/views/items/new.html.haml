@@ -4,10 +4,11 @@
 
   .sale
     .sale__files
-      - if @item.errors.present?
-        %ul#error_explanation 
-          - @item.errors.full_messages.each do |message|
-            li = message
+      - unless !flash[:error_messages]
+        .alert-danger
+          %ul
+            - flash[:error_messages].each do |msg|
+              %li= msg
       = form_with model:@item, local:true do |f|
         %h2.sell__block__head
           商品の情報を入力

@@ -1,4 +1,3 @@
----
 ja:
   activerecord:
     errors:
@@ -7,6 +6,19 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      item:
+        photos image: 画像
+        Name: 商品名
+        Description: 商品説明
+        Category: カテゴリ
+        Status: 商品の状態
+        Shipping charges: 配送料の負担
+        Area: 発送元
+        Days to ship: 発送日の目安
+        Price: 商品価格
+    models:
+      itme: 商品
   date:
     abbr_day_names:
     - 日
