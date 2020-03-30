@@ -194,12 +194,10 @@
         margin:0 auto;
         // overflow-x: scroll;
         &__productlist {
-          width: 780px;
-          
-
+          display: inline-block;
+          display: inline-flex;
+          white-space: nowrap;
           &__box {
-            width:220px;
-            display: flex;
             &__top {
               height: 150px;
               position: relative;
