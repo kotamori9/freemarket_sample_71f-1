@@ -50,16 +50,9 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
     end
-    # @photo = Photo.find(params[:id])
   end
   
   def update
-    # if @item.update(item_params)
-    #   redirect_to root_path
-    # else
-    #   render :edit
-    # end
-
     @item = Item.find(params[:id])
     @item.update(item_update_params)
   end
@@ -67,11 +60,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @categories = Category.find(params[:id])
-
-    # @items = Item.all
-    # @photos = Photo.all
-
-    # @items = Item.all.includes(:users)
   end
 
   def destroy
@@ -84,10 +72,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
   end
-
-  # def set_item
-  #   # @item = Item.find(params[:id])
-  # end
 
   def item_update_params
     params.require(:item).permit(:name,[photos_attributes: [:image, :_destroy, :id]])
