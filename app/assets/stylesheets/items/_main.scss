@@ -178,8 +178,8 @@
         padding: 26px auto;
         margin:0 auto;
         overflow-x: scroll;
-        display: inline-block;
-        display: inline-flex;
+        // display: inline-block;
+        // display: inline-flex;
         white-space: nowrap;
         &__productlist {
           display: inline-block;
@@ -188,8 +188,12 @@
           display: flex;
           justify-content: space-around;
           &__box {
-    
+            background-color: white;
+            width: 220px;
+            object-fit: cover;
+            
             &__top {
+              
               // height: 150px;
               // position: relative;
               // overflow: hidden;
