@@ -15,8 +15,6 @@ class Item < ApplicationRecord
   validates :name, presence: true
   # 商品の説明が必須
   validates :description, presence: true
-  # カテゴリーの情報が必須
-  validates :category_id, presence: true
   # 商品の状態についての情報が必須
   validates :status, presence: true
   # 配送料の負担についての情報が必須
@@ -27,6 +25,8 @@ class Item < ApplicationRecord
   validates :days_to_ship, presence: true
   # 価格についての情報が必須
   validates :price, presence: true
+  # カテゴリーの情報が必須
+  validates :category, presence: true
 
 
   # アクティブハッシュ
