@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to @item, notice: "商品名#{@item.name}を登録しました"
+      redirect_to @item, notice: "商品名「#{@item.name}」を登録しました"
     else
       redirect_back fallback_location: @item,
       flash: {

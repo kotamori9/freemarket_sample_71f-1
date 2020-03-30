@@ -20,34 +20,16 @@
             %p 最大5枚までアップロードできます
             .post__drop__box__container
               .prev-content
-
-                //JSで挿入したhtmlと同じ形 each文でのプレビュー表示
-                -# - @item.photos.each do |image|
-                -#   .preview-box
-                -#     .upper-box
-                -#       = image_tag image.image.url, width: "112", height: "112", alt: "preview"
-                -#     .lower-box
-                      -# .update-box
-                      -#   %label.edit-btn 編集
-                      -# .delete-box
-                      -#   .delete-btn
-                      -#     %span 削除
               .label-content
-              
-                //プレビューの数に合わせてforオプションを指定
-                = f.label :"photos_attributes_#{@item.photos.length}_image", class: "label-box", id: "label-box--#{@item.photos.length}" do
+                %label{for: "item_photos_attributes_0_image", class: "label-box", id: "label-box--0"}
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :photos do |i|
-
-                  //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                   = i.file_field :image, class: "hidden-field"
-                  = i.check_box:_destroy, class: "hidden-checkbox"
-
-                  //5つのfile_fieldを準備するに当たって、足りない分を表示
-                - @item.photos.length.upto(4) do |i|
-                  %input{name: "item[photos_attributes][#{i}][image]", id: "item_photos_attributes_#{i}_image", class:"hidden-field", type:"file"}
-          
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][1][image]", id: "item_photos_attributes_1_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][2][image]", id: "item_photos_attributes_2_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][3][image]", id: "item_photos_attributes_3_image" }
+                  %input{class:"hidden-field", type: "file", name: "item[photos_attributes][4][image]", id: "item_photos_attributes_4_image" }
         .sale__files__name
           .sale__files__name__comment1
             .sale__files__name__comment1__box1
