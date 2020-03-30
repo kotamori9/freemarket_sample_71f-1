@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   # before_action :set_item, except: [:index, :new, :create]
   # before_action :set_item, only: [:edit, :show]
 
+
   def index
     @items = Item.all
     @photos = Photo.all
@@ -45,23 +46,40 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @photo = Photo.find_by_id(params[:id])
 
-    @category_parent_array = ["---"]
+    # @category_parent_array = ["---"]
+    # #データベースから、親カテゴリーのみ抽出し、配列化
+    # Category.where(ancestry: nil).each do |parent|
+    #     @category_parent_array << parent.name
+    # end
+    
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+
+    @category_parent_array = []
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
         @category_parent_array << parent.name
     end
-    # @photo = Photo.find(params[:id])
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+    
   end
   
   def update
-    # if @item.update(item_params)
-    #   redirect_to root_path
-    # else
-    #   render :edit
-    # end
 
     @item = Item.find(params[:id])
     @item.update(item_update_params)
+    redirect_to root_path
+
   end
 
   def show
