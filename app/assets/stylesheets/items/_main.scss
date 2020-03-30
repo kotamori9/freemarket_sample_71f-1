@@ -173,14 +173,14 @@
           }
         }
       }
-      .productlistes {
+      .productlists {
         width: 780px;
         padding: 26px auto;
         margin:0 auto;
         overflow-x: scroll;
-        // display: inline-block;
-        // display: inline-flex;
-        // white-space: nowrap;
+        display: inline-block;
+        display: inline-flex;
+        white-space: nowrap;
         &__productlist {
           display: inline-block;
           display: inline-flex;
