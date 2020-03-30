@@ -11,12 +11,22 @@
         -# - @photos.each do |photo|
         -# - @items.each do |item|
         - @items.zip(@photos).each do |item, photo|
-          .figure.productList--img
-            =link_to item_path(item) do
-              =image_tag "#{photo.image}".to_s
-          .productList--body
-            .name
-              =item.name
-            .details
-              =item.price
+          .box
+            .figure.productList--img
+              =link_to item_path(item) do
+                =image_tag "#{photo.image}".to_s
+            .productList--body
+              %h3.name
+                =item.name
+              .details
+                %ul
+                  %li
+                    =item.price
+                    円
+                  %li
+                    = fa_icon 'star'
+                    0
+                %p
+                  (税込)
+
 

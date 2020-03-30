@@ -68,7 +68,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @categories = Category.find(params[:id])
 
+    # @items = Item.all
+    # @photos = Photo.all
+
     # @items = Item.all.includes(:users)
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
   end
 
   private
