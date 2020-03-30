@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.new
-    # @photos = @item.photos.build
+    # @photo = @item.photos.build
 
       #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
     if @item.save
       redirect_to @item, notice: "商品を登録しました"
       
@@ -44,7 +43,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @photo = Photo.find(params[:id])
+    @photo = Photo.find_by_id(params[:id])
 
     @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみ抽出し、配列化
