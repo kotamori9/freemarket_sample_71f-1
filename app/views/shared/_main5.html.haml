@@ -13,8 +13,7 @@
         - @items.zip(@photos).each do |item, photo|
           .figure.productList--img
             =link_to item_path(item) do
-              =image_tag photo.image.url
-              -# =image_tag "#{photo.image}".to_s
+              =image_tag "#{photo.image}".to_s
           .productList--body
             .name
               =item.name
