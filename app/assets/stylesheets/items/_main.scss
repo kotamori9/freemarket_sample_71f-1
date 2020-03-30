@@ -174,22 +174,52 @@
           }
         }
       }
-      .productLists {
+      // .productLists {
+      //   width: 780px;
+      //   padding: 26px auto;
+      //   margin:0 auto;
+      //   overflow-x: scroll;
+     
+      //     .productList{
+      //       display: inline-block;
+      //       display: inline-flex;
+      //       white-space: nowrap;
+          }
+      }
+    
+    
+      .productlistes {
         width: 780px;
         padding: 26px auto;
         margin:0 auto;
-        overflow-x: scroll;
-     
-          .productList{
-            display: inline-block;
-            display: inline-flex;
-            white-space: nowrap;
+        // overflow-x: scroll;
+        &__productlist {
+          width: 780px;
+          
+
+          &__box {
+            width:220px;
+            display: flex;
+            &__top {
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+            }
+            &__under {
+              height: 150px;
+              &__name {
+
+              }
+              &__price {
+
+              }
+            }
           }
-        
+        }
       }
-    }
-  }
-  
+
   &__section2 {
     padding: 80px 0 0;
     background-color: #f8f8f8;

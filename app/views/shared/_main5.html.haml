@@ -6,18 +6,16 @@
       %a
         %h3.title 
           新規投稿商品
-    .productLists
-      .productList
+    .productlistes
+      .productlists__productlist
         - @items.each do |item|
-          .figure.productList--img
-            -# -item.photos.each do |photo|
-            =link_to item_path(item) do
-              -# =image_tag "#{photo.image}".to_s
-              -# =image_tag "#{photo.image}".first.url
-              -# =image_tag photos.images.first.url
-              =image_tag "#{item.photos.first.image}".to_s
-          .productList--body
-            .name
-              =item.name
-            .details
-              =item.price
+          .productlists__productlist__box
+            .productlists__productlist__box__top
+              =link_to item_path(item) do
+                =image_tag "#{item.photos.first.image}".to_s
+            .productlists__productlist__box__under
+              .productlists__productlist__box__under__name
+                =item.name
+              .productlists__productlist__box__under__price
+                =item.price
+
