@@ -8,15 +8,15 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     attributes:
       item:
-        photos image: 画像
-        Name: 商品名
-        Description: 商品説明
-        Category: カテゴリ
-        Status: 商品の状態
-        Shipping charges: 配送料の負担
-        Area: 発送元
-        Days to ship: 発送日の目安
-        Price: 商品価格
+        name: 商品名
+        description: 商品説明
+        category: カテゴリ
+        status: 商品の状態
+        shipping_charges: 配送料の負担
+        area: 発送元
+        days_to_ship: 発送日の目安
+        price: 商品価格
+        photos_image: 画像
     models:
       itme: 商品
   date:
