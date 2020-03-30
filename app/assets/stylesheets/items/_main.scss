@@ -192,21 +192,27 @@
         width: 780px;
         padding: 26px auto;
         margin:0 auto;
-        // overflow-x: scroll;
+        overflow-x: scroll;
+        // display: inline-block;
+        // display: inline-flex;
+        // white-space: nowrap;
         &__productlist {
           display: inline-block;
           display: inline-flex;
-          white-space: nowrap;
+          // white-space: nowrap;
+          display: flex;
+          justify-content: space-around;
           &__box {
+
             &__top {
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
+              // height: 150px;
+              // position: relative;
+              // overflow: hidden;
+              // margin: 0;
+              // z-index: auto;
             }
             &__under {
-              height: 150px;
+              // height: 150px;
               &__name {
 
               }
