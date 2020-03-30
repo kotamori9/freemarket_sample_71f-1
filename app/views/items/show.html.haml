@@ -67,10 +67,9 @@
               - if user_signed_in? && current_user.id == @item.saler_id
                 .left
                   =link_to edit_item_path(@item.id) do
-                    %ul
-                      %a
-                        = fa_icon 'star'
-                        ='商品を編集する'
+                    = fa_icon 'star'
+                    ='商品を編集する'
+
                 .right
                   =link_to item_path, method: :delete do
                     -# %ul
