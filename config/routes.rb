@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'purchase/index'
+  # get 'purchase/ index'
   # get 'purchase/done'
   # get 'creditcards/new'
   # get 'creditcards/show'
