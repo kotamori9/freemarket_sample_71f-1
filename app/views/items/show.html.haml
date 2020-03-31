@@ -72,10 +72,8 @@
 
                 .right
                   =link_to item_path, method: :delete do
-                    -# %ul
-                    -#   %a
-                    -#     = fa_icon 'flag'
-                    ="商品を削除する"
+                    = fa_icon 'flag'
+                    商品を削除する
               - elsif user_signed_in?
                 .center
                   =link_to "/" do
