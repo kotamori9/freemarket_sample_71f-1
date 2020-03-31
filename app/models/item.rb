@@ -38,7 +38,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :statushash
   belongs_to_active_hash :postagehash
   belongs_to_active_hash :shippinghash
-  belongs_to_active_hash :Aprefecture
+  belongs_to_active_hash :aprefecture
 end
 
 

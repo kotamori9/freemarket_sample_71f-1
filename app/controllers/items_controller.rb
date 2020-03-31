@@ -46,8 +46,12 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @categories = Category.find(params[:id])
+    @category = @item.category
 
-    # @items = Item.all.includes(:users)
+    @aprefecture = Aprefecture.find(@item.area)
+    @shipping = Shippinghash.find(@item.days_to_ship)
+    @postagehash = Postagehash.find(@item.shipping_charges)
+
   end
 
 
