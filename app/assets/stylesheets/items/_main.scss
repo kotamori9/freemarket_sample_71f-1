@@ -178,35 +178,35 @@
         padding: 26px auto;
         margin:0 auto;
         overflow-x: scroll;
+        margin-top: 26px;
         // display: inline-block;
         // display: inline-flex;
         white-space: nowrap;
-        &__productlist {
+        &__productlist {   
           display: inline-block;
           display: inline-flex;
           white-space: nowrap;
           display: flex;
           justify-content: space-around;
           &__box {
-            background-color: #f8f8f8;
+            background-color: white;
             width: 220px;
-            object-fit: cover;
-            
+            img{
+              height: 100px;
+              width: 100px;
+              object-fit: cover;
             &__top {
-              
-              // height: 150px;
-              // position: relative;
-              // overflow: hidden;
-              // margin: 0;
-              // z-index: auto;
+              }
             }
             &__under {
+              padding: 16px;
               // height: 150px;
               &__name {
-    
               }
               &__price {
-    
+              }
+              a{
+                font-size:10px;
               }
             }
           }
