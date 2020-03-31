@@ -11,6 +11,7 @@
               商品：
               = @item.name
             .img__box
+              -# - @items.zip(@photos).each do |item, photo|             
               = image_tag "stake.png", size: "560x346"
               .img__box1
                 = image_tag "stake.png", size: "140x87"
@@ -26,58 +27,68 @@
             .table
               .table__left
                 .left1
-                  出品者
+                  %a
+                    出品者
                 .left2
-                  カテゴリー
+                  %a
+                    カテゴリー
                 .left3
-                  ブランド
+                  %a
+                    ブランド
                 .left4
-                  配送料
+                  %a
+                    配送料
                 .left5
-                  地域
+                  %a
+                    地域
                 .left6
-                  発送目安
+                  %a
+                    発送目安
               .table__right
                 .right1
-                  = @item.saler.nickname
+                  %a
+                    = @item.user
                 .right2
-                  = @item.category_id
+                  %a
+                    = @item.category_id
                 .right3
-                  = @item.brand
+                  %a
+                    = @item.brand
                 .right4
-                  = @item.shipping_charges
+                  %a
+                    = @item.shipping_charges
                 .right5
-                  = @item.area
+                  %a
+                    = @item.area
                 .right6
-                  = @item.days_to_ship        
+                  %a
+                    = @item.days_to_ship   
             .tag
-              - if user_signed_in?
+              - if user_signed_in? && current_user.id == @item.saler_id
                 .left
                   =link_to edit_item_path(@item.id) do
-                    編集する
-              -#       %ul
-              -#         %a
-              -#           = fa_icon 'star'
-              -#           = link_to '商品を編集する', 'edit_item_path'
-              -#   .right
-              -#     =link_to destroy_user_session_path, method: :delete do
-              -#       %ul
-              -#         %a
-              -#           = fa_icon 'flag'
-              -#           = link_to '商品を削除する', 'edit_item_path'      
-              -# - else 
-              -#   .center
-              -#     =link_to edit_item_path do
-              -#       %ul
-              -#         %a
-              -#           = fa_icon 'star'
-              -#           = link_to '商品を購入する', 'edit_item_path'    
+                    = fa_icon 'star'
+                    ='商品を編集する'
+
+                .right
+                  =link_to item_path, method: :delete do
+                    -# %ul
+                    -#   %a
+                    -#     = fa_icon 'flag'
+                    ="商品を削除する"
+              - else 
+                .center
+                  =link_to "/" do
+                    %ul
+                      %a
+                        = fa_icon 'star'
+                        = '商品を購入する'    
 
                 -# .right  
                 -#   =link_to destroy_user_session_path, method: :delete do
                 -#     %ul
                 -#       %a
-                -#         = link_to '商品を削除する', 'edit_item_path'
+                -#         ='商品を削除する'
             
           .middle__contents
             .content

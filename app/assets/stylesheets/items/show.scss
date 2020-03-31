@@ -68,31 +68,47 @@
                 border: 0.5px solid #dedede;
                 font-size: 14px;
                 text-align: center;
-                
-
               .left1{
                 height: 47px;
-                border: 0.5px solid #dedede;          
+                border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                }                   
               }
               .left2{
                 height: 47px;
-                border: 0.5px solid#dedede;              
+                border: 0.5px solid#dedede;
+                a{
+                  line-height: 45px;
+                }                      
               }
               .left3{
                 height: 47px;
-                border: 0.5px solid #dedede;              
+                border: 0.5px solid #dedede; 
+                a{
+                  line-height: 45px;
+                }                      
               }
               .left4{
                 height: 47px;
-                border: 0.5px solid #dedede;              
+                border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                }                      
               }
               .left5{
                 height: 47px;
-                border: 0.5px solid #dedede;              
+                border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                }                       
               }
               .left6{
                 height: 45px;
-                border: 0.5px solid #dedede;              
+                border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                }                       
               }
             }
 
@@ -105,28 +121,54 @@
               .right1{
                 height: 47px;
                 border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                  padding-left: 10px;
               }
+            }
               .right2{
                 height: 47px;
                 border: 0.5px solid #dedede;
                 color: #3CCACE;
+                a{
+                  line-height: 45px;
+                  padding-left: 10px;
+                } 
               }
               .right3{
                 height: 47px;
                 border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                  color: #3CCACE;
+                  padding-left: 10px;
+                }
               }
               .right4{
                 height: 47px;
                 border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                  padding-left: 10px;
+                } 
               }
               .right5{
                 height: 47px;
                 border: 0.5px solid #dedede;
                 color: #3CCACE;
+                a{
+                  line-height: 45px;
+                  color: #3CCACE;
+                  padding-left: 10px;
+                } 
               }
               .right6{
                 height: 45px;
                 border: 0.5px solid #dedede;
+                a{
+                  line-height: 45px;
+                  padding-left: 10px;
+                } 
               }
             }}
           }
@@ -171,6 +213,7 @@
               border: 1px solid #333;
               text-decoration: none;
               font-size: 14px;
+              margin:6px 10px;
               ul{
                 margin:6px 10px;
               }
@@ -218,6 +261,7 @@
               margin: 0 auto;
               a{
                 text-decoration: none;
+                font-size: 18px;
               }
 
               // text-align: center;
