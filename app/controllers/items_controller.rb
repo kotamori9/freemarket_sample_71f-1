@@ -85,9 +85,18 @@ class ItemsController < ApplicationController
   
   def update
 
-    item = Item.find(params[:id])
-    item.update(item_update_params)
-    redirect_to root_path
+    @item = Item.find(params[:id])
+    if @item.update(item_update_params)
+    redirect_to root_path, notice: "商品名「#{@item.name}」を編集しました"
+    
+    else
+      redirect_back fallback_location: @item,
+      flash: {
+        item: @item,
+        error_messages: @item.errors.full_messages
+      }
+    end
+
 
   end
 
