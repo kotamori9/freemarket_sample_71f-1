@@ -10,10 +10,10 @@
       .productList
         -# - @photos.each do |photo|
         -# - @items.each do |item|
-        - @items.zip(@photos).each do |item, photo|
-          .figure.productList--img
-            =link_to item_path(item) do
-              =image_tag "#{photo.image}".to_s
+        -# - @items.zip(@photos).each do |item, photo|
+        -#   .figure.productList--img
+        -#     =link_to item_path(item) do
+        -#       =image_tag "#{photo.image}".to_s
           .productList--body
             .name
               =item.name

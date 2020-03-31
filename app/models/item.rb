@@ -5,6 +5,10 @@ class Item < ApplicationRecord
   # has_many :purchased
   has_many :photos, dependent: :delete_all
   accepts_nested_attributes_for :photos, allow_destroy: true
+  # 画像が0枚の時に出品できないようになっている
+  validates_associated :photos
+  validates :photos, presence: true
+
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User"
   belongs_to :category

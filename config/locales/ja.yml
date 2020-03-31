@@ -16,7 +16,7 @@ ja:
         area: 発送元
         days_to_ship: 発送日の目安
         price: 商品価格
-        photos_image: 画像
+        photos: 画像
     models:
       itme: 商品
   date:
