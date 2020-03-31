@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.new
-    # @photo = @item.photos.build
+    # @photos = @item.photos.build
 
       #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
@@ -33,12 +33,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to @item, notice: "商品を登録しました"
-      
-      # redirect_to root_path(@item), notice: "商品が出品されました。"
+      redirect_to @item, notice: "商品名「#{@item.name}」を登録しました"
     else
-      # redirect_back(fallback_location: root_path), flash[:alert] ='商品が出品されました'
-      redirect_to root_path, notice: "商品を登録に失敗しました"
+      redirect_back fallback_location: @item,
+      flash: {
+        item: @item,
+        error_messages: @item.errors.full_messages
+      }
     end
   end
 
