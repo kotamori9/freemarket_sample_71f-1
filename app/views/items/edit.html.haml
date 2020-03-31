@@ -24,14 +24,12 @@
                 - @item.photos.each do |photo|
                   .preview-box
                     .upper-box
-                      = image_tag photo.image.url
+                      = image_tag photo.image.url, width: "112", height: "112", alt: "preview"
                       -# = image_tag image.image.url, width: "112", height: "112", alt: "preview"
                     .lower-box
-                      -# .update-box
-                      -#   %label.edit-btn 編集
-                      -# .delete-box
-                      -#   .delete-btn
-                      -#     %span 削除
+                      .delete-box
+                        .delete-btn
+                          %span 削除
               .label-content
               
                 //プレビューの数に合わせてforオプションを指定

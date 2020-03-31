@@ -50,18 +50,12 @@ RSpec.describe Item, type: :model do
       expect(item.errors[:price]).to include("を入力してください")
     end
 
-    # カテゴリーの情報がなければ無効な状態であること
-    # it "is invalid with a category" do
-    #   item = Item.new(category: nil)
-    #   item.valid?
-    #   expect(item.errors[:category]).to include("を入力してください")
-    # end
 
-    # 画像が0枚の時に出品できないようになっている
-    it "is invalid with a photos" do
-      item = Item.new(photos: nil)
-      item.valid?
-      expect(item.errors[:photos]).to include("を入力してください")
-    end
+    # # 画像が0枚の時に出品できないようになっている
+    # it "is invalid with a photos" do
+    #   item = Item.new(photos: nil)
+    #   item.valid?
+    #   expect(item.errors[:photos]).to include("を入力してください")
+    # end
 
 end
