@@ -127,7 +127,7 @@ class ItemsController < ApplicationController
 
   def pay
     @item = Item.find(params[:id])
-    # card = Creditcard.where(user_id: current_user.id).first
+    card = Creditcard.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
     amount: @item.price,
@@ -148,6 +148,7 @@ class ItemsController < ApplicationController
   def item_update_params
     params.require(:item).permit(:price,:area,:brand,:description,:status,:shipping_charges,:days_to_ship,:name,photos_attributes: [:image, :_destroy, :id]).merge(category_id: params[:category_id])
   end
+  
   def order_params
     params.require(:item).permit(
       :name,
