@@ -76,7 +76,7 @@
                     -#   %a
                     -#     = fa_icon 'flag'
                     ="商品を削除する"
-              - else 
+              - elsif user_signed_in?
                 .center
                   =link_to "/" do
                     %ul
