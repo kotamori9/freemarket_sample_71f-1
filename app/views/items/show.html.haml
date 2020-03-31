@@ -76,11 +76,8 @@
                     商品を削除する
               - elsif user_signed_in?
                 .center
-                  =link_to "/" do
-                    %ul
-                      %a
-                        = fa_icon 'star'
-                        = '商品を購入する'    
+                  =link_to purchase_items_path(@item.id,current_user), method: :get do
+                    商品を購入する  
 
                 -# .right  
                 -#   =link_to destroy_user_session_path, method: :delete do

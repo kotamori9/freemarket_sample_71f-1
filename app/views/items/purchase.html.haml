@@ -14,10 +14,10 @@
               = image_tag "71FB8RzWdsL.jpg", size: "80x80"
             .single-container__main__section__top__buy__box__detail
               %P.name
-                現場で使える Ruby on Rails 5速習実践ガイド
+                =@item.name
               %P.price
                 %span
-                  1000
+                  =@item.price
                 %span.fee
                   （税込）送料込み
 
@@ -45,9 +45,12 @@
                 %p
                   クレジットカード
                   %br
-                  *********1234
+                  = "**** **** **** " + @default_card_information.last4
                   %br
-                  有効期限 06/26
+                  有効期限
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
 
                 .card
                   = image_tag "1200px-Mastercard-logo.svg.png", size: "34x20"
@@ -67,7 +70,10 @@
                     真子就有
 
             .single-container__main__section__bottom__inner__form__btn
-              = link_to "購入する"
+              = form_tag(action: :pay, method: :post) do
+                -# %script.payjp-button
+                -# {:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_**************"}
+                %button 購入する
   .single-container__footer
     .nav
       %ul
@@ -86,3 +92,8 @@
     %p
       © Furima, Inc.
 
+
+
+-# = form_tag(action: :pay, method: :post) do
+-#   %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_**************"}
+-#   -# %button 購入する
