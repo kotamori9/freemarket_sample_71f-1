@@ -10,12 +10,23 @@
     margin: 0 auto;
     
     &__contents{
-     width: 700px;
-     margin: 0 auto;
+      width: 700px;
+      margin: 0 auto;
       .top__contents{
         .item__box{
           padding: 24px 40px 40px;
           background-color: #fff;
+            .size {
+              object-fit: cover;
+              width: 560px;
+              height: 346px;
+
+            }
+          .item-info__photo--sub {
+            display: flex;
+            justify-content: center;
+          }
+
 
           .product{
             text-align: center;
