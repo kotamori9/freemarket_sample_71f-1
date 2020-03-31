@@ -47,22 +47,24 @@
               .table__right
                 .right1
                   %a
-                    = @item.user
+                    = @item.saler.nickname
                 .right2
                   %a
-                    = @item.category_id
+                    = @category.root.name
+                    = @item.category.parent.name
+                    = @item.category.name
                 .right3
                   %a
                     = @item.brand
                 .right4
                   %a
-                    = @item.shipping_charges
+                    = @postagehash.name
                 .right5
                   %a
-                    = @item.area
+                    = @aprefecture.name
                 .right6
                   %a
-                    = @item.days_to_ship   
+                    = @shipping.name
             .tag
               - if user_signed_in? && current_user.id == @item.saler_id
                 .left
