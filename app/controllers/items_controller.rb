@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   # before_action :set_item, except: [:index, :new, :create]
   before_action :set_item, only: [:edit, :show, :edit, :show,:update,:purchase,:pay]
+  before_action :set_card, only: [:purchase,:pay]
 
   require "payjp"
   def index
@@ -116,7 +117,6 @@ class ItemsController < ApplicationController
 
   def purchase
 
-    card = Creditcard.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
     else
@@ -128,7 +128,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    card = Creditcard.where(user_id: current_user.id).first
+    
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
     amount: @item.price,
@@ -159,6 +159,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_card
+    card = Creditcard.where(user_id: current_user.id).first
   end
 
 end
