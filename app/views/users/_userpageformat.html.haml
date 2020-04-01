@@ -48,6 +48,13 @@
       = @users.nickname
       のマイページ
     .userpagebody__rightside__transaction
+      - @items.each do |item|
+        .productlists__productlist__box
+          .productlists__productlist__box__top
+            =link_to item_path(item) do
+              = image_tag "#{item.photos.first.image}".to_s
+        = item.name
+        = "#{item.price}円"
 .userpagefooter
   .userpagefooter__contents
     .userpagefooter__contents__content
