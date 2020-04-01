@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :set_item, except: [:index, :new, :create]
-  # before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show, :edit, :show,:update,:purchase,:pay]
 
   require "payjp"
   def index
@@ -44,7 +44,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @categories = Category.find(params[:id])
     @category = @item.category
 
@@ -56,7 +55,6 @@ class ItemsController < ApplicationController
 
 
   def edit
-    @item = Item.find(params[:id])
     @photo = Photo.find_by_id(params[:id])
 
     # @category_parent_array = ["---"]
@@ -88,8 +86,6 @@ class ItemsController < ApplicationController
   end
   
   def update
-
-    @item = Item.find(params[:id])
     if @item.update(item_update_params)
     redirect_to root_path, notice: "商品名「#{@item.name}」を編集しました"
     
