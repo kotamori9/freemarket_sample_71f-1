@@ -81,7 +81,7 @@
                     商品を削除する
               - elsif user_signed_in?
                 .center
-                  =link_to item_purchase_index_path(@item.id,current_user), method: :get do
+                  =link_to item_purchase_index_path(@item.id), method: :get do
                     商品を購入する  
             
           .middle__contents
