@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :set_item, except: [:index, :new, :create]
-  # before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show,:update, :destroy,:purchase, :pay]
 
 
   def index
@@ -11,7 +10,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.new
-    # @photos = @item.photos.build
 
       #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
@@ -44,7 +42,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @categories = Category.find(params[:id])
     @category = @item.category
 
@@ -56,14 +53,7 @@ class ItemsController < ApplicationController
 
 
   def edit
-    @item = Item.find(params[:id])
     @photo = Photo.find_by_id(params[:id])
-
-    # @category_parent_array = ["---"]
-    # #データベースから、親カテゴリーのみ抽出し、配列化
-    # Category.where(ancestry: nil).each do |parent|
-    #     @category_parent_array << parent.name
-    # end
     
     grandchild_category = @item.category
     child_category = grandchild_category.parent
@@ -89,7 +79,6 @@ class ItemsController < ApplicationController
   
   def update
 
-    @item = Item.find(params[:id])
     if @item.update(item_update_params)
     redirect_to root_path, notice: "商品名「#{@item.name}」を編集しました"
     
@@ -106,13 +95,11 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end
 
   def purchase
-    @item = Item.find(params[:id])
 
     card = Creditcard.where(user_id: current_user.id).first
     if card.blank?
@@ -126,7 +113,6 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
     card = Creditcard.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
@@ -154,6 +140,10 @@ class ItemsController < ApplicationController
       :name,
       :price,
     ).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
