@@ -9,8 +9,6 @@
     .productlists
       .productlists__productlist
         - @items.each do |item|
-          -if item.buyer_id.present? 
-          -else
             .productlists__productlist__box
               .productlists__productlist__box__top
                 =link_to item_path(item) do
