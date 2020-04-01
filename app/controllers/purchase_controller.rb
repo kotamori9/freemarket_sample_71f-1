@@ -1,6 +1,9 @@
 class PurchaseController < ApplicationController
   def index
-    card = Card.where(user_id: current_user.id).first
+    @item = Item.find_by(params[:id])
+    @address = Address.where(user_id: current_user.id).first
+    # @item = Item.find(params[:id])
+    card = Creditcard.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -15,13 +18,20 @@ class PurchaseController < ApplicationController
   end
 
   def pay
+    # @item = Item.find(params[:id])
     card = Creditcard.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-    :amount => 13500, #支払金額を入力（itemテーブル等に紐づけても良い）
+    :amount => Item.find(params[:item_id]).price, #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
   redirect_to action: 'done' #完了画面に移動
   end
+
+  private
+  def item_params
+    params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
+  end
+
 end

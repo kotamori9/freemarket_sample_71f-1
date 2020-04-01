@@ -20,10 +20,17 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
     resources :photos, only: [:index] 
-    collection do
-      get  'purchase/:id'=>  'items#purchase', as: 'purchase'
-      post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
-      get  'done'=>      'items#done', as: 'done'
+    # collection do
+    #   get  'purchase/:id'=>  'items#purchase', as: 'purchase'
+    #   post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
+    #   get  'done'=>      'items#done', as: 'done'
+    # end
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
     end
   end
   
