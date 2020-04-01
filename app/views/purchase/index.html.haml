@@ -11,7 +11,7 @@
         .single-container__main__section__top__buy
           .single-container__main__section__top__buy__box
             %h3
-              = image_tag "71FB8RzWdsL.jpg", size: "80x80"
+              = image_tag @item.photos.first.image.url, size: "80x80"
             .single-container__main__section__top__buy__box__detail
               %P.name
                 =@item.name
@@ -27,15 +27,13 @@
             %ul.price
               %li
                 .buy-price-label
-                  支払い金額
                 .buy-price-cell
                   %span
-                    ¥1,000
             %ul.point
               %li
                 .checkbox
-                  = check_box_tag :check1
-                  = label_tag :check1, "ポイントを使用（所持ポイント: P0)"
+                  -# = check_box_tag :check1
+                  -# = label_tag :check1, "ポイントを使用（所持ポイント: P0)"
             .single-container__main__section__bottom__inner__form__buy
               .single-container__main__section__bottom__inner__form__buy__content
                 .clearfix
@@ -53,7 +51,7 @@
                   = exp_month + " / " + exp_year
 
                 .card
-                  = image_tag "1200px-Mastercard-logo.svg.png", size: "34x20"
+                  -# = image_tag "1200px-Mastercard-logo.svg.png", size: "34x20"
 
             .single-container__main__section__bottom__inner__form__user
               .single-container__main__section__bottom__inner__form__user__inner
@@ -63,11 +61,14 @@
                   = link_to "変更する" 
                 .adderss
                   %p
-                    〒150-0043
+                    =@address.postal_code
                     %br
-                    東京都渋谷区道玄坂２丁目２３−１２ フォンティスビル ７F
+                    =@address.prefecture
+                    =@address.city
+                    =@address.address_number
+                    =@address.any_address_info
                     %br
-                    真子就有
+                    =@address.destination_name
 
             .single-container__main__section__bottom__inner__form__btn
               -# = form_with url: pay_items_path(@item), method: :post do

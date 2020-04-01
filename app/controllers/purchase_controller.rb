@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
   def index
     @item = Item.find_by(params[:id])
+    @address = Address.where(user_id: current_user.id).first
     # @item = Item.find(params[:id])
     card = Creditcard.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
