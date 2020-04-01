@@ -1,0 +1,126 @@
+.all
+  .wrapper
+    = render "/shared/header"
+
+  .main
+    .main__show
+      .main__show__contents
+        .top__contents
+          .item__box
+            .product
+              商品：
+              = @item.name
+            .img__box
+              -if @item.photos.present?
+                .item-info__photo--main
+                  .main-photo
+                    = image_tag @item.photos.first.image.url, class: "size"
+                .item-info__photo--sub
+                  - @item.photos.each do |image|
+                    .sub-photo
+                      = image_tag image.image.url
+
+
+
+
+              -# - @items.zip(@photos).each do |item, photo|             
+              -# = image_tag "stake.png", size: "560x346"
+              -# .img__box1
+              -#   = image_tag "stake.png", size: "140x87"
+              -#   = image_tag "stake.png", size: "140x87"
+              -#   = image_tag "stake.png", size: "140x87"
+            .price__box
+              .price1
+                = @item.price
+              .price2
+                (税込)送料込み
+            .detail
+              = simple_format @item.description              
+            .table
+              .table__left
+                .left1
+                  %a
+                    出品者
+                .left2
+                  %a
+                    カテゴリー
+                .left3
+                  %a
+                    ブランド
+                .left4
+                  %a
+                    配送料
+                .left5
+                  %a
+                    地域
+                .left6
+                  %a
+                    発送目安
+              .table__right
+                .right1
+                  %a
+                    = @item.saler.nickname
+                .right2
+                  %a
+                    = @category.root.name
+                    = @item.category.parent.name
+                    = @item.category.name
+                .right3
+                  %a
+                    = @item.brand
+                .right4
+                  %a
+                    = @postagehash.name
+                .right5
+                  %a
+                    = @aprefecture.name
+                .right6
+                  %a
+                    = @shipping.name
+            .tag
+              - if user_signed_in? && current_user.id == @item.saler_id
+                .left
+                  =link_to edit_item_path(@item.id) do
+                    = fa_icon 'star'
+                    商品を編集する
+
+                .right
+                  =link_to item_path, method: :delete do
+                    = fa_icon 'flag'
+                    商品を削除する
+              - elsif user_signed_in?
+                .center
+                  =link_to purchase_items_path(@item.id,current_user), method: :get do
+                    商品を購入する  
+
+                -# .right  
+                -#   =link_to destroy_user_session_path, method: :delete do
+                -#     %ul
+                -#       %a
+                -#         ='商品を削除する'
+            
+          .middle__contents
+            .content
+              .text
+              -#  = form_with  root do |form|
+              -#  = form.text_area :text, placeholder: "No Message"
+
+              .text2
+                コメントの履歴
+              .button
+                %ul
+                  %i
+                    = fa_icon 'comment'
+                  %a
+                    コメントする
+        .option__area
+          .left 
+            ＜前の商品
+          .right    
+            後ろの商品＞      
+        .relateditems 
+          商品をもっと見る
+    -# .footer
+    -#   = render "/shared/bunner"        
+    .footer
+      = render "/shared/footer"
