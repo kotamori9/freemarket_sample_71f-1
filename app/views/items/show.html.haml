@@ -20,15 +20,6 @@
                     .sub-photo
                       = image_tag image.image.url
 
-
-
-
-              -# - @items.zip(@photos).each do |item, photo|             
-              -# = image_tag "stake.png", size: "560x346"
-              -# .img__box1
-              -#   = image_tag "stake.png", size: "140x87"
-              -#   = image_tag "stake.png", size: "140x87"
-              -#   = image_tag "stake.png", size: "140x87"
             .price__box
               .price1
                 = @item.price
@@ -92,18 +83,10 @@
                 .center
                   =link_to purchase_items_path(@item.id,current_user), method: :get do
                     商品を購入する  
-
-                -# .right  
-                -#   =link_to destroy_user_session_path, method: :delete do
-                -#     %ul
-                -#       %a
-                -#         ='商品を削除する'
             
           .middle__contents
             .content
               .text
-              -#  = form_with  root do |form|
-              -#  = form.text_area :text, placeholder: "No Message"
 
               .text2
                 コメントの履歴
@@ -119,8 +102,6 @@
           .right    
             後ろの商品＞      
         .relateditems 
-          商品をもっと見る
-    -# .footer
-    -#   = render "/shared/bunner"        
+          商品をもっと見る   
     .footer
       = render "/shared/footer"

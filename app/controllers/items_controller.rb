@@ -95,8 +95,16 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if @item.destroy
+      redirect_to root_path, notice:  "商品名「#{@item.name}」の削除に成功しました"
+
+    else
+      redirect_to root_path, fallback_location: @item,
+      flash: {
+        item: @item,
+        error_messages: @item.errors.full_messages
+      }
+    end
   end
 
   def purchase
