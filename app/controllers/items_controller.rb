@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   # before_action :set_item, except: [:index, :new, :create]
-  # before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show, :edit, :show,:update,:purchase,:pay]
+  before_action :set_card, only: [:purchase,:pay]
 
   require "payjp"
   def index
@@ -44,7 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @categories = Category.find(params[:id])
     @category = @item.category
 
@@ -56,7 +56,6 @@ class ItemsController < ApplicationController
 
 
   def edit
-    @item = Item.find(params[:id])
     @photo = Photo.find_by_id(params[:id])
 
     # @category_parent_array = ["---"]
@@ -88,8 +87,6 @@ class ItemsController < ApplicationController
   end
   
   def update
-
-    @item = Item.find(params[:id])
     if @item.update(item_update_params)
     redirect_to root_path, notice: "商品名「#{@item.name}」を編集しました"
     
@@ -106,11 +103,44 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to root_path
+    if @item.destroy
+      redirect_to root_path, notice:  "商品名「#{@item.name}」の削除に成功しました"
+
+    else
+      redirect_to root_path, fallback_location: @item,
+      flash: {
+        item: @item,
+        error_messages: @item.errors.full_messages
+      }
+    end
   end
 
+  def purchase
+
+    if card.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      # Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
+  end
+
+  def pay
+    
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    card: order_params['payjp-token'],
+    currency: 'jpy'
+    )
+    redirect_to action: :done
+  end
+
+  def done
+  end
+  
   private
   def item_params
     params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
@@ -119,6 +149,22 @@ class ItemsController < ApplicationController
   def item_update_params
     params.require(:item).permit(:price,:area,:brand,:description,:status,:shipping_charges,:days_to_ship,:name,photos_attributes: [:image, :_destroy, :id]).merge(category_id: params[:category_id])
   end
+  
+  def order_params
+    params.require(:item).permit(
+      :name,
+      :price,
+    ).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def set_card
+    card = Creditcard.where(user_id: current_user.id).first
+  end
 
 end
+
 
