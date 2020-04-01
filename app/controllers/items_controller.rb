@@ -111,36 +111,6 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
-  # def purchase
-  #   @item = Item.find(params[:id])
-
-  #   card = Creditcard.where(user_id: current_user.id).first
-  #   if card.blank?
-  #     redirect_to action: "new"
-  #   else
-  #     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-  #     # Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
-  #     customer = Payjp::Customer.retrieve(card.customer_id)
-  #     @default_card_information = customer.cards.retrieve(card.card_id)
-  #   end
-  # end
-
-  # def pay
-  #   @item = Item.find(params[:id])
-  #   card = Creditcard.where(user_id: current_user.id).first
-  #   Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-  #   charge = Payjp::Charge.create(
-  #     :amount => @item.price,
-  #     :card => @card,
-  #     # :card => card.customer.id,
-  #     :currency => 'jpy',
-  #   )
-  #   redirect_to action: :done
-  # end
-
-  # def done
-  # end
-  
   private
   def item_params
     params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
@@ -149,9 +119,6 @@ class ItemsController < ApplicationController
   def item_update_params
     params.require(:item).permit(:price,:area,:brand,:description,:status,:shipping_charges,:days_to_ship,:name,photos_attributes: [:image, :_destroy, :id]).merge(category_id: params[:category_id])
   end
-  # def buy_params
-  #   @item = Item.find(params[:id])
-  # end
 
 end
 
