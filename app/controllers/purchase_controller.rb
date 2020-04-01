@@ -1,6 +1,6 @@
 class PurchaseController < ApplicationController
   def index
-    @item = Item.find_by(params[:id])
+    @buyitem = Item.find(params[:item_id])
     @address = Address.where(user_id: current_user.id).first
     # @item = Item.find(params[:id])
     card = Creditcard.where(user_id: current_user.id).first
@@ -26,12 +26,14 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
+    @item_buyer= Item.find(params[:item_id])
+    @item_buyer.update( buyer_id: current_user.id)
   redirect_to action: 'done' #完了画面に移動
   end
 
-  private
-  def item_params
-    params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
-  end
+  # private
+  # def item_params
+  #   params.require(:item).permit(:brand,:name,:description,:status,:shipping_charges,:days_to_ship,:buyer_id,:saler_id,:price,:area, photos_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id,category_id: params[:category_id])
+  # end
 
 end

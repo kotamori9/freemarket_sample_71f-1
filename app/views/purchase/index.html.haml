@@ -11,13 +11,13 @@
         .single-container__main__section__top__buy
           .single-container__main__section__top__buy__box
             %h3
-              = image_tag @item.photos.first.image.url, size: "80x80"
+              =image_tag "#{@buyitem.photos.first.image}".to_s, size: "80x80"
             .single-container__main__section__top__buy__box__detail
               %P.name
-                =@item.name
+                =@buyitem.name
               %P.price
                 %span
-                  =@item.price
+                  =@buyitem.price
                 %span.fee
                   （税込）送料込み
 
