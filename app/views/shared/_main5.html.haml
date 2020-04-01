@@ -9,17 +9,19 @@
     .productlists
       .productlists__productlist
         - @items.each do |item|
-          .productlists__productlist__box
-            .productlists__productlist__box__top
-              =link_to item_path(item) do
-                =image_tag "#{item.photos.first.image}".to_s
-            .productlists__productlist__box__under
-              .productlists__productlist__box__under__name
-                =item.name
-              .productlists__productlist__box__under__price
-                =item.price
-                円
-              %a
-                (税込み)
+          -if item.buyer_id.present? 
+          -else
+            .productlists__productlist__box
+              .productlists__productlist__box__top
+                =link_to item_path(item) do
+                  =image_tag "#{item.photos.first.image}".to_s
+              .productlists__productlist__box__under
+                .productlists__productlist__box__under__name
+                  =item.name
+                .productlists__productlist__box__under__price
+                  =item.price
+                  円
+                %a
+                  (税込み)
 
 
