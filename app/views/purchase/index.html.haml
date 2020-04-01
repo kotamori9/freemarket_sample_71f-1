@@ -1,20 +1,119 @@
-%h1 Purchase#index
-%p Find me in app/views/purchase/index.html.haml
+.single-container
+  .single-container__header
+    %h1
+      %a
+        = image_tag "logo.png", size: "180x53"
+  .single-container__main
+    .single-container__main__section
+      %h2
+        購入内容の確認
+      .single-container__main__section__top
+        .single-container__main__section__top__buy
+          .single-container__main__section__top__buy__box
+            %h3
+              = image_tag @item.photos.first.image.url, size: "80x80"
+            .single-container__main__section__top__buy__box__detail
+              %P.name
+                =@item.name
+              %P.price
+                %span
+                  =@item.price
+                %span.fee
+                  （税込）送料込み
+
+      .single-container__main__section__bottom 
+        .single-container__main__section__bottom__inner
+          .single-container__main__section__bottom__inner__form
+            %ul.price
+              %li
+                .buy-price-label
+                .buy-price-cell
+                  %span
+            %ul.point
+              %li
+                .checkbox
+                  -# = check_box_tag :check1
+                  -# = label_tag :check1, "ポイントを使用（所持ポイント: P0)"
+            .single-container__main__section__bottom__inner__form__buy
+              .single-container__main__section__bottom__inner__form__buy__content
+                .clearfix
+                  %h3
+                    支払い方法
+                  = link_to "変更する" 
+                %p
+                  クレジットカード
+                  %br
+                  = "**** **** **** " + @default_card_information.last4
+                  %br
+                  有効期限
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+
+                .card
+                  -# = image_tag "1200px-Mastercard-logo.svg.png", size: "34x20"
+
+            .single-container__main__section__bottom__inner__form__user
+              .single-container__main__section__bottom__inner__form__user__inner
+                .clearfix
+                  %h3
+                    配送先
+                  = link_to "変更する" 
+                .adderss
+                  %p
+                    =@address.postal_code
+                    %br
+                    =@address.prefecture
+                    =@address.city
+                    =@address.address_number
+                    =@address.any_address_info
+                    %br
+                    =@address.destination_name
+
+            .single-container__main__section__bottom__inner__form__btn
+              -# = form_with url: pay_items_path(@item), method: :post do
+              -#   :plain
+              -#   %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", "data-text": "購入する", "data-key": "pk_test_3228c160d40ca45a29a884c1"}
+              = form_tag(action: :pay, method: :post) do
+                %button 購入する
+  .single-container__footer
+    .nav
+      %ul
+        %li
+          %a
+            プライバシーポリシー
+        %li
+          %a
+            FURIMA利用規約
+        %li
+          %a
+            特定商取引に関する表記
+
+    %a
+      = image_tag "logo.png", size: "80x65"
+    %p
+      © Furima, Inc.
 
 
-%h2 購入を確定しますか？
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
-%br
-%h3 支払い方法
-- if @default_card_information.blank?
-  %br /
-- else
-  -#以下カード情報を表示
-  = "**** **** **** " + @default_card_information.last4
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-%br
-= form_tag(action: :pay, method: :post) do
-  %button 購入する
+
+
+-# %h1 Purchase#index
+-# %p Find me in app/views/purchase/index.html.haml
+
+
+-# %h2 購入を確定しますか？
+-# %p Apple MacBook Pro 13インチ
+-# %p ¥135,000(送料込み)
+-# %br
+-# %h3 支払い方法
+-# - if @default_card_information.blank?
+-#   %br /
+-# - else
+-#   -#以下カード情報を表示
+-#   = "**** **** **** " + @default_card_information.last4
+-#   - exp_month = @default_card_information.exp_month.to_s
+-#   - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+-#   = exp_month + " / " + exp_year
+-# %br
+-# = form_tag(action: :pay, method: :post) do
+-#   %button 購入する
