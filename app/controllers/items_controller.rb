@@ -32,6 +32,8 @@ class ItemsController < ApplicationController
   end
 
   def create
+    #税率で値段を求める
+    params.require(:item)[:price]=Item.taxingPrice(params.require(:item)[:price])
     @item = Item.new(item_params)
     if @item.save
       redirect_to @item, notice: "商品名「#{@item.name}」を登録しました"
@@ -87,6 +89,8 @@ class ItemsController < ApplicationController
   end
   
   def update
+    #税率で値段を求める
+    params.require(:item)[:price]=Item.taxingPrice(params.require(:item)[:price])
     if @item.update(item_update_params)
     redirect_to root_path, notice: "商品名「#{@item.name}」を編集しました"
     
