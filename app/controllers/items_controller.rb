@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # before_action :set_item, except: [:index, :new, :create]
-  before_action :set_item, only: [:edit, :show, :edit, :show,:update,:purchase,:pay]
+  before_action :set_item, only: [:edit, :show, :edit, :show,:update, :destroy, :purchase,:pay]
   before_action :set_card, only: [:purchase,:pay]
 
   require "payjp"
