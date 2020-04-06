@@ -4,10 +4,10 @@ class PurchaseController < ApplicationController
     @address = Address.where(user_id: current_user.id).first
     card = Creditcard.where(user_id: current_user.id).first
     address = Address.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to new_user_creditcard_path(current_user)
+    if card.blank? 
+      redirect_to new_user_creditcard_path(current_user) 
     elsif address.blank?
-      redirect_to new_user_address_path(current_user)
+      redirect_to new_user_address_path(current_user) 
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
