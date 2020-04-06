@@ -1,27 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- URL/ID/Pass
+  - ElasticIP:18.177.9.38
+  - basic認証
+  - ID:admin
+  - パスワード：2222
 
-Things you may want to cover:
+- テスト用アカウント等
+  - 購入者用
+    - メールアドレス:
+    - パスパード:
+  - 購入用カード情報
+    - 番号:
+    - 期限:
+    - セキュリティコード:
+  - 出品者用
+    - メールアドレス名:
+    - パスワード:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 ## usersテーブル
 |Column|Type|Options|
