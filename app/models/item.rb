@@ -42,6 +42,12 @@ class Item < ApplicationRecord
     return a_price
   end
 
+  # 引数の値段を消費税抜きに変換して返します。
+  def self.nonetaxingPrice(a_price)
+    a_price=(BigDecimal(a_price)/BigDecimal(Taxrate.to_s)).floor
+    return a_price
+  end
+
 
   # アクティブハッシュ
   extend ActiveHash::Associations::ActiveRecordExtensions
