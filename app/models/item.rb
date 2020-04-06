@@ -38,8 +38,12 @@ class Item < ApplicationRecord
   # 引数の値段を消費税込みに変換して返します。
   # string型の引数である商品の値段と税率(to_sへの変換が必要)を、BigDecimalに変換して計算後、小数点以下を破棄に変更)
   def self.taxingPrice(a_price)
-    a_price=(BigDecimal(a_price)*BigDecimal(Taxrate.to_s)).floor
-    return a_price
+    if a_price.blank?
+      return
+    else
+      a_price=(BigDecimal(a_price)*BigDecimal(Taxrate.to_s)).floor
+      return a_price
+    end
   end
 
   # 引数の値段を消費税抜きに変換して返します。
