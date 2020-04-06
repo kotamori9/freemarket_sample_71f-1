@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_03_24_013801) do
     t.string "first_name", null: false
     t.string "last_name_furigana", null: false
     t.string "first_name_furigana", null: false
-    t.string "credit_card", null: false
     t.string "tell"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

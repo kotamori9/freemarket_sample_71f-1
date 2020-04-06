@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :birthday, presence: true
   validates :nickname, presence: true
   validates :last_name,:first_name,:last_name_furigana,:first_name_furigana, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: 'は全角で入力してください'}
-  validates :credit_card, presence: true
+  # validates :credit_card, presence: true
 
   has_many :items
   # has_many :comments
