@@ -58,6 +58,7 @@ class ItemsController < ApplicationController
 
 
   def edit
+    @item.price = Item.nonetaxingPrice(@item.price)
     @photo = Photo.find_by_id(params[:id])
 
     # @category_parent_array = ["---"]
