@@ -10,11 +10,9 @@
   - 購入者用
     - メールアドレス:test@gmail.com
     - パスワード:test1111
-
   - 出品者用
     - メールアドレス名:test2@gmail.com
     - パスワード:test1111
-
 
 ## usersテーブル
 |Column|Type|Options|
