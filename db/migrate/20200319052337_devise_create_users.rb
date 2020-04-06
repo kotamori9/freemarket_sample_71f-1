@@ -12,7 +12,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name,         null: false
       t.string :last_name_furigana, null: false
       t.string :first_name_furigana,null: false
-      t.string :credit_card,        null: false
       t.string :tell
 
       ## Recoverable
