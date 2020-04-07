@@ -26,7 +26,6 @@
                   .preview-box
                     .upper-box
                       = image_tag photo.image.url, width: "112", height: "112", alt: "preview"
-                      -# = image_tag image.image.url, width: "112", height: "112", alt: "preview"
                     .lower-box
                       .delete-box
                         .delete-btn
@@ -34,7 +33,7 @@
               .label-content
               
                 //プレビューの数に合わせてforオプションを指定
-                = f.label :"photos_attributes_#{@item.photos.length}_image", class: "label-box", id: "label-box--#{@item.photos.length}" do
+                = f.label :"photos_attributes_#{@item.photos.length}_image", class: "label-box", id: "label-box--#{@item.photos.length}", for: "item_photos_attributes_#{@item.photos.length}_image" do
                   %pre.label-box__text-visible クリックしてファイルをアップロード
               .hidden-content
                 = f.fields_for :photos do |i|
