@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
     #税率で値段を求める
     params.require(:item)[:price]=Item.taxingPrice(params.require(:item)[:price])
     @item = Item.new(item_params)
-
     if @item.save
       redirect_to @item, notice: "商品名「#{@item.name}」を登録しました"
     else
@@ -50,7 +49,7 @@ class ItemsController < ApplicationController
   def show
     @categories = Category.find(params[:id])
     @category = @item.category
-
+    
     @aprefecture = Aprefecture.find(@item.area)
     @shipping = Shippinghash.find(@item.days_to_ship)
     @postagehash = Postagehash.find(@item.shipping_charges)
